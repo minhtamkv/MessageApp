@@ -20,6 +20,8 @@
 		880FA61E237417420086F172 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA61D237417420086F172 /* UITableViewExtensions.swift */; };
 		880FA6202374178C0086F172 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA61F2374178C0086F172 /* AppColor.swift */; };
 		880FA622237417D70086F172 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA621237417D70086F172 /* Global.swift */; };
+		880FA624237419410086F172 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA623237419410086F172 /* BaseVC.swift */; };
+		880FA626237419A80086F172 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA625237419A80086F172 /* BaseView.swift */; };
 		911592C858FC024928B62FB2 /* Pods_Message_MessageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82673EA773A2B5E4E47812C8 /* Pods_Message_MessageUITests.framework */; };
 		A412ED16A5762A9B5B15B645 /* Pods_MessageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CDF3D7406ABD2586ED0A604 /* Pods_MessageTests.framework */; };
 		E2799A043DA8263321B7C7CC /* Pods_Message.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74589430CE7DC29C51C38832 /* Pods_Message.framework */; };
@@ -68,6 +70,8 @@
 		880FA61D237417420086F172 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		880FA61F2374178C0086F172 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		880FA621237417D70086F172 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		880FA623237419410086F172 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		880FA625237419A80086F172 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		95556B6C379E49BAEB744D48 /* Pods-Message.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Message.release.xcconfig"; path = "Target Support Files/Pods-Message/Pods-Message.release.xcconfig"; sourceTree = "<group>"; };
 		F74147A38A6131E04537B142 /* Pods-MessageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageTests.release.xcconfig"; path = "Target Support Files/Pods-MessageTests/Pods-MessageTests.release.xcconfig"; sourceTree = "<group>"; };
 		FBF62FE6E6CCC9A149FE4226 /* Pods-Message-MessageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Message-MessageUITests.debug.xcconfig"; path = "Target Support Files/Pods-Message-MessageUITests/Pods-Message-MessageUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				880FA5EC2373F3FF0086F172 /* Assets.xcassets */,
 				880FA5EE2373F3FF0086F172 /* LaunchScreen.storyboard */,
 				880FA5F12373F3FF0086F172 /* Info.plist */,
+				880FA623237419410086F172 /* BaseVC.swift */,
+				880FA625237419A80086F172 /* BaseView.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -478,8 +484,10 @@
 				880FA61E237417420086F172 /* UITableViewExtensions.swift in Sources */,
 				880FA5E82373F3FF0086F172 /* ViewController.swift in Sources */,
 				880FA5E42373F3FF0086F172 /* AppDelegate.swift in Sources */,
+				880FA624237419410086F172 /* BaseVC.swift in Sources */,
 				880FA5E62373F3FF0086F172 /* SceneDelegate.swift in Sources */,
 				880FA61C237417060086F172 /* UIColorExtensions.swift in Sources */,
+				880FA626237419A80086F172 /* BaseView.swift in Sources */,
 				880FA6202374178C0086F172 /* AppColor.swift in Sources */,
 				880FA622237417D70086F172 /* Global.swift in Sources */,
 			);
