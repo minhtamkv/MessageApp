@@ -22,15 +22,6 @@ class BaseVC : UIViewController, BaseView {
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 46, height: 46)
     }
     
-    func setRefreshableView(_ view: UITableView) {
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl!.tintColor = AppColor.COLOR_ACCENT
-        self.refreshControl!.addTarget(self, action: #selector(BaseVC.onPullRefresh), for: UIControl.Event.valueChanged)
-        
-        self.refreshTableView = view
-        view.addSubview(refreshControl!)
-    }
-    
     dynamic open func onPullRefresh() {
         self.refreshControl?.endRefreshing()
     }
@@ -39,14 +30,12 @@ class BaseVC : UIViewController, BaseView {
         self.refreshControl?.endRefreshing()
     }
     
-    
     func reload() {
         DispatchQueue.main.async {
             self.refreshTableView?.reloadData()
         }
     }
-    
-    
+        
     func reloadTableView() {
         if self.table != nil {
             DispatchQueue.main.async {
@@ -71,6 +60,5 @@ class BaseVC : UIViewController, BaseView {
     func dismissLoading(){
         activityIndicator.stopAnimating()
     }
-    
     
 }

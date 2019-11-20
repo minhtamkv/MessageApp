@@ -20,7 +20,6 @@ extension UITableView {
             if rowCount > 0 {
                 self.scrollToRow(at: indexPath, at: .bottom, animated: true)
             }
-            
         }
     }
 }
