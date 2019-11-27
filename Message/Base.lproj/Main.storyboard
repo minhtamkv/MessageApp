@@ -99,7 +99,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="clickLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rI6-3L-X5G"/>
+                                            <action selector="clickLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EbB-YW-dhd"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hiển thị mật khẩu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtp-fe-UCP">
@@ -185,6 +185,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="checkLogin" destination="F9J-ZT-6hh" id="my8-Xp-O2T"/>
+                        <outlet property="indicator" destination="J3h-gE-5Mc" id="SKQ-4U-9r7"/>
+                        <outlet property="txtEmail" destination="cHj-Jy-XC6" id="kf1-WR-glF"/>
+                        <outlet property="txtPassword" destination="Usk-8K-t4r" id="ptB-uw-qoi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
