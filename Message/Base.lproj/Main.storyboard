@@ -186,10 +186,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="checkLogin" destination="F9J-ZT-6hh" id="my8-Xp-O2T"/>
+                        <outlet property="checkLoginButton" destination="F9J-ZT-6hh" id="my8-Xp-O2T"/>
+                        <outlet property="emailTextField" destination="cHj-Jy-XC6" id="kf1-WR-glF"/>
                         <outlet property="indicator" destination="J3h-gE-5Mc" id="SKQ-4U-9r7"/>
-                        <outlet property="txtEmail" destination="cHj-Jy-XC6" id="kf1-WR-glF"/>
-                        <outlet property="txtPassword" destination="Usk-8K-t4r" id="ptB-uw-qoi"/>
+                        <outlet property="passwordTextField" destination="Usk-8K-t4r" id="ptB-uw-qoi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

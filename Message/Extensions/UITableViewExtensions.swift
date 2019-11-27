@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 extension UITableView {
-    func scrollToBottom(){
-        
+    func scrollToBottom() {
         DispatchQueue.main.async {
             let rowCount = self.numberOfRows(inSection:  self.numberOfSections - 1)
             let indexPath = IndexPath(

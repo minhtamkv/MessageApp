@@ -19,6 +19,8 @@
 		880FA61E237417420086F172 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA61D237417420086F172 /* UITableViewExtensions.swift */; };
 		880FA622237417D70086F172 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA621237417D70086F172 /* Global.swift */; };
 		88491E1A238E6EFD00DB2056 /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E19238E6EFD00DB2056 /* FireStoreManager.swift */; };
+		88491E1C238E776400DB2056 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E1B238E776400DB2056 /* ViewControllerExtensions.swift */; };
+		88491E1E238E79F600DB2056 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E1D238E79F600DB2056 /* UserRepository.swift */; };
 		88C4CE622386364C00754C9D /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE612386364C00754C9D /* Room.swift */; };
 		88C4CE64238636A100754C9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE63238636A100754C9D /* User.swift */; };
 		88C4CE66238636F300754C9D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE65238636F300754C9D /* Message.swift */; };
@@ -69,6 +71,8 @@
 		880FA61D237417420086F172 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		880FA621237417D70086F172 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		88491E19238E6EFD00DB2056 /* FireStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
+		88491E1B238E776400DB2056 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		88491E1D238E79F600DB2056 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		88C4CE612386364C00754C9D /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		88C4CE63238636A100754C9D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88C4CE65238636F300754C9D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				880FA621237417D70086F172 /* Global.swift */,
+				88491E1D238E79F600DB2056 /* UserRepository.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				880FA61D237417420086F172 /* UITableViewExtensions.swift */,
+				88491E1B238E776400DB2056 /* ViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -489,6 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88491E1E238E79F600DB2056 /* UserRepository.swift in Sources */,
 				880FA61E237417420086F172 /* UITableViewExtensions.swift in Sources */,
 				880FA5E82373F3FF0086F172 /* ViewController.swift in Sources */,
 				88C4CE622386364C00754C9D /* Room.swift in Sources */,
@@ -497,6 +504,7 @@
 				880FA5E62373F3FF0086F172 /* SceneDelegate.swift in Sources */,
 				88C4CE66238636F300754C9D /* Message.swift in Sources */,
 				880FA622237417D70086F172 /* Global.swift in Sources */,
+				88491E1C238E776400DB2056 /* ViewControllerExtensions.swift in Sources */,
 				88C4CE64238636A100754C9D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
