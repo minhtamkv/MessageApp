@@ -18,26 +18,16 @@ enum Gender {
     case female
 }
 
-class User {
-    var uid: String
-    var email: String
-    var password: String
-    var userName: String
+struct User {
+    var uid: String = ""
+    var email: String = ""
+    var password: String = ""
+    var userName: String = ""
     var birthday: Date?
     var gender: Gender = .male
     var typeSender: SenderType = .receive
-    var image: String
-    var roomArray: [String]
-    var status: String
+    var image: String = ""
+    var roomArray: [String] = [""]
+    var status: String = ""
     var isSelected: Bool = false
-    
-    init(userName: String, image: String, email: String, uid: String,
-         typeSender: SenderType = .send, gender: Gender = .male, roomArray: [String], status: String) {
-        self.userName = userName
-        self.image = image
-        self.email = image
-        self.uid = uid
-        self.roomArray = roomArray
-        self.status = status
-    }
 }
