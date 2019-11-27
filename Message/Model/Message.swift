@@ -14,12 +14,13 @@ class Message {
     var content: String
     var uidRoom: String
     var image: String
-    var timeSend: NSNumber
+    var timeSend: Double
     var uidUser: String
     var height: CGFloat
     var width: CGFloat
     
-    init(idMessage: String, content: String, uidRoom: String, image: String, timeSend: NSNumber, uidUser: String,  height: CGFloat, width: CGFloat) {
+    init(idMessage: String, content: String, uidRoom: String, image: String,
+         timeSend: Double, uidUser: String,  height: CGFloat, width: CGFloat) {
         self.content = content
         self.uidRoom = uidRoom
         self.image = image

@@ -12,11 +12,10 @@ class Room {
     var nameGroup: String
     var idRoom: String
     var image: String
-    var time: NSNumber
-    var uidMember: Array<String>?
-    var arrAdmin: Array<String>
-
-    init(idRoom: String, nameGroup : String, image: String, time: NSNumber, uidMember: Array<String>, arrAdmin: Array<String>) {
+    var time: Double
+    var uidMember: [String]
+    var arrAdmin: [String]
+    init(idRoom: String, nameGroup : String, image: String, time: Double, uidMember: [String], arrAdmin: [String]) {
         self.nameGroup = nameGroup
         self.time = time
         self.image = image
