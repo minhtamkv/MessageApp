@@ -12,10 +12,9 @@ import UIKit
 
 class UserRepository {
     
-    static let shared = UserRepository()
     let defaults = UserDefaults.standard
     
-    func login(user : String , password : String , completion : @escaping (String?, Error?) -> Void) {
+    func login(user : String , password : String , completion : ((String?, Error?) -> Void)?) {
         FireStoreManager.shared.login(user: user, password: password) {_, error -> Void in
             if error != nil {
                 ViewController.shared.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")

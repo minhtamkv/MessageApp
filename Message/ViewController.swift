@@ -26,18 +26,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configViews()
+    }
+    
+    func configViews() {
         indicator.isHidden = true
     }
     
-    @IBAction func clickLogin(_ sender: Any) {
-        guard let username = emailTextField.text, let password = passwordTextField.text else {return}
+    @IBAction func handleLoginButton(_ sender: UIButton) {
+        guard let username = emailTextField.text, let password = passwordTextField.text else { return }
         switch username.count {
         case inputEmpty:
             stopIndicator()
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
         case (inputEmpty + 1)...emailMaxLength:
             stopIndicator()
-            UserRepository.shared.login(user: username, password: password) { _, error in
+            UserRepository().login(user: username, password: password) { _, error in
                 if error != nil {
                     self.stopIndicator()
                     self.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
@@ -54,7 +58,7 @@ class ViewController: UIViewController {
             stopIndicator()
             self.showAlert(message: "Mật khẩu phải có ít nhất 8 ký tự", title: "Đồng ý")
         default:
-            UserRepository.shared.login(user: username, password: password) { _, error in
+            UserRepository().login(user: username, password: password) { _, error in
                 if error != nil {
                     self.stopIndicator()
                     self.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
