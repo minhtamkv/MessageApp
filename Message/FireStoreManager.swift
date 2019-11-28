@@ -13,6 +13,8 @@ class FireStoreManager {
     
     static let shared = FireStoreManager()
     
+    private init() {}
+    
     func login (user : String , password : String , completion : @escaping (String?, Error?) -> Void){
         Auth.auth().signIn(withEmail: user, password: password) { (result, error) -> Void in
             completion(result?.user.uid, error)
