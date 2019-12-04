@@ -196,6 +196,7 @@ PODS:
   - SDWebImage (5.3.0):
     - SDWebImage/Core (= 5.3.0)
   - SDWebImage/Core (5.3.0)
+  - Validator (3.2.1)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -203,6 +204,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI
   - Kingfisher (~> 5.0)
+  - Validator
 
 SPEC REPOS:
   trunk:
@@ -236,6 +238,7 @@ SPEC REPOS:
     - nanopb
     - Protobuf
     - SDWebImage
+    - Validator
 
 SPEC CHECKSUMS:
   AppAuth: bce82c76043657c99d91e7882e8a9e1a93650cd4
@@ -268,7 +271,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   SDWebImage: f1afa74b86587c2c63f4e80dfd39b21e3c17b45b
+  Validator: 80a6f567220c962dfd2d9928ae98a8c1d164f6f4
 
-PODFILE CHECKSUM: b9be5277adee3c422a0eed91caf5ac611916ef54
+PODFILE CHECKSUM: de799b7b66c1d0f35394172d3bc48bc26d99c889
 
 COCOAPODS: 1.8.4

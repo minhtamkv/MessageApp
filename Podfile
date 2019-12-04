@@ -11,7 +11,7 @@ target 'Message' do
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
 	pod 'Kingfisher', '~> 5.0'
-
+	pod 'Validator'
 
   target 'MessageTests' do
     inherit! :search_paths

@@ -13,8 +13,8 @@ extension ViewController {
     func showAlert(message : String , title : String) {
         let alert = UIAlertController(title: "Thông báo", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Đồng ý", style: .default) { _ in
-            alert.dismiss(animated: true, completion: nil)
+            alert.dismiss(animated: true)
         })
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true)
     }
 }
