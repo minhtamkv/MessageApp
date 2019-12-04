@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     var validationError: ValidationError?
+    let userRepository = UserRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
 
         switch resultEmail {
         case .valid:
-            UserRepository().login(user: username, password: password) { _, error in
+            userRepository.login(user: username, password: password) { _, error in
                 if error != nil {
                     self.stopIndicator()
                     self.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
@@ -60,7 +61,7 @@ class ViewController: UIViewController {
         
         switch resultPassword {
         case .valid:
-            UserRepository().login(user: username, password: password) { _, error in
+            userRepository.login(user: username, password: password) { _, error in
                 if error != nil {
                     self.stopIndicator()
                     self.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
@@ -75,7 +76,7 @@ class ViewController: UIViewController {
         
         switch resultEmailMax {
         case .valid:
-            UserRepository().login(user: username, password: password) { _, error in
+            userRepository.login(user: username, password: password) { _, error in
                 if error != nil {
                     self.stopIndicator()
                     self.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")

@@ -10,25 +10,6 @@ import Foundation
 import FirebaseAuth
 import UIKit
 
-
-class Person: NSObject, NSCoding {
-    let username: String
-    let password: String
-    init(username: String, password: String) {
-        self.username = username
-        self.password = password
-    }
-    required init(coder decoder: NSCoder) {
-        self.username = decoder.decodeObject(forKey: "username") as? String ?? ""
-        self.password = decoder.decodeObject(forKey: "password") as? String ?? ""
-    }
-
-    func encode(with coder: NSCoder) {
-        coder.encode(username, forKey: "username")
-        coder.encode(password, forKey: "password")
-    }
-}
-
 class UserRepository {
     
     let defaults = UserDefaults.standard
