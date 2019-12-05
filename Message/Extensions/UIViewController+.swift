@@ -9,7 +9,7 @@
 import Foundation
 import Kingfisher
 
-extension ViewController {
+extension UIViewController {
     func showAlert(message : String , title : String) {
         let alert = UIAlertController(title: "Thông báo", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Đồng ý", style: .default) { _ in
