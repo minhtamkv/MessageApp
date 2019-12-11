@@ -12,7 +12,7 @@ import Kingfisher
 import Validator
 
 private struct CheckCharater {
-    let inputEmpty: Int = 0
+    let inputEmpty: Int = 1
     let emailMaxLength: Int = 32
     let passwordMinLength: Int = 7
 }
@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     let defaults = UserDefaults.standard
-    var validationError: ValidationError?
     let userRepository = UserRepository()
     
     override func viewDidLoad() {
@@ -39,10 +38,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func handleLoginButton(_ sender: UIButton) {
-        guard let username = emailTextField.text, let password = passwordTextField.text, let validationError = validationError else { return }
-        let minLengthRule = ValidationRuleLength(min: CheckCharater().inputEmpty, error: validationError)
-        
+        guard let username = emailTextField.text,
+            let password = passwordTextField.text else { return }
+        let minLengthRule = ValidationRuleLength(min: CheckCharater().inputEmpty, error: CustomValidationError("error"))
         let resultEmail = username.validate(rule: minLengthRule)
+        let resultPass = password.validate(rule: minLengthRule)
 
         switch resultEmail {
         case .valid:
@@ -56,7 +56,19 @@ class ViewController: UIViewController {
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
         }
         
-        let minLengthRulePassword = ValidationRuleLength(min: CheckCharater().passwordMinLength, error: validationError)
+        switch resultPass {
+        case .valid:
+            userRepository.login(user: username, password: password) { _, error in
+                if error != nil {
+                    self.stopIndicator()
+                    self.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
+                }
+            }
+        case .invalid:
+            self.showAlert(message: "Vui lòng điền Mật khẩu", title: "Đồng ý")
+        }
+        
+        let minLengthRulePassword = ValidationRuleLength(min: CheckCharater().passwordMinLength, error:  CustomValidationError("error"))
         let resultPassword = password.validate(rule: minLengthRulePassword)
         
         switch resultPassword {
@@ -71,7 +83,7 @@ class ViewController: UIViewController {
             self.showAlert(message: "Password tối đa 32 ký tự", title: "Đồng ý")
         }
         
-        let maxLengthRule = ValidationRuleLength(max: 5, error: validationError)
+        let maxLengthRule = ValidationRuleLength(max: 5, error:  CustomValidationError("error"))
         let resultEmailMax = username.validate(rule: maxLengthRule)
         
         switch resultEmailMax {
@@ -85,6 +97,18 @@ class ViewController: UIViewController {
         case .invalid:
             self.showAlert(message: "Email tối đa 32 ký tự", title: "Đồng ý")
         }
+    }
+    
+    @IBAction func handleRegisterButton(_ sender: UIButton) {
+        let registerViewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        registerViewController.modalPresentationStyle = .fullScreen
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        self.present(registerViewController, animated: false)
     }
     
     func startIndicator() {

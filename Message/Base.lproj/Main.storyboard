@@ -139,7 +139,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="clickCreate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EBD-2t-dIM"/>
+                                            <action selector="handleRegisterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Op6-nw-vZW"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="J3h-gE-5Mc">

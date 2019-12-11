@@ -18,6 +18,9 @@
 		880FA6162373FA430086F172 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 880FA6152373FA430086F172 /* GoogleService-Info.plist */; };
 		880FA61E237417420086F172 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA61D237417420086F172 /* UITableViewExtensions.swift */; };
 		880FA622237417D70086F172 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA621237417D70086F172 /* Global.swift */; };
+		882C0602239899F800ED3B3E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C0600239899F800ED3B3E /* RegisterViewController.swift */; };
+		882C0603239899F800ED3B3E /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882C0601239899F800ED3B3E /* RegisterVC.xib */; };
+		882C06052398B05A00ED3B3E /* CustomValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C06042398B05A00ED3B3E /* CustomValidationError.swift */; };
 		88491E1A238E6EFD00DB2056 /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E19238E6EFD00DB2056 /* FireStoreManager.swift */; };
 		88491E1C238E776400DB2056 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E1B238E776400DB2056 /* UIViewController+.swift */; };
 		88491E1E238E79F600DB2056 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E1D238E79F600DB2056 /* UserRepository.swift */; };
@@ -71,6 +74,9 @@
 		880FA6152373FA430086F172 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		880FA61D237417420086F172 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		880FA621237417D70086F172 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		882C0600239899F800ED3B3E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		882C0601239899F800ED3B3E /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
+		882C06042398B05A00ED3B3E /* CustomValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomValidationError.swift; sourceTree = "<group>"; };
 		88491E19238E6EFD00DB2056 /* FireStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
 		88491E1B238E776400DB2056 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		88491E1D238E79F600DB2056 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -161,6 +167,8 @@
 				880FA5EE2373F3FF0086F172 /* LaunchScreen.storyboard */,
 				880FA5F12373F3FF0086F172 /* Info.plist */,
 				88491E19238E6EFD00DB2056 /* FireStoreManager.swift */,
+				882C0600239899F800ED3B3E /* RegisterViewController.swift */,
+				882C0601239899F800ED3B3E /* RegisterVC.xib */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -208,6 +216,7 @@
 				88C4CE612386364C00754C9D /* Room.swift */,
 				88C4CE63238636A100754C9D /* User.swift */,
 				88C4CE65238636F300754C9D /* Message.swift */,
+				882C06042398B05A00ED3B3E /* CustomValidationError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -337,6 +346,7 @@
 				880FA6162373FA430086F172 /* GoogleService-Info.plist in Resources */,
 				880FA5ED2373F3FF0086F172 /* Assets.xcassets in Resources */,
 				880FA5EB2373F3FF0086F172 /* Main.storyboard in Resources */,
+				882C0603239899F800ED3B3E /* RegisterVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +519,9 @@
 				88C4CE66238636F300754C9D /* Message.swift in Sources */,
 				880FA622237417D70086F172 /* Global.swift in Sources */,
 				88491E1C238E776400DB2056 /* UIViewController+.swift in Sources */,
+				882C06052398B05A00ED3B3E /* CustomValidationError.swift in Sources */,
 				88C4CE64238636A100754C9D /* User.swift in Sources */,
+				882C0602239899F800ED3B3E /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

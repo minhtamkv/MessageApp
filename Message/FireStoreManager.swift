@@ -15,9 +15,19 @@ class FireStoreManager {
     
     private init() {}
     
-    func login (user : String , password : String , completion : @escaping (String?, Error?) -> Void){
+    func login (user : String , password : String , completion : @escaping (String?, Error?) -> Void) {
         Auth.auth().signIn(withEmail: user, password: password) { (result, error) -> Void in
             completion(result?.user.uid, error)
+        }
+    }
+    
+    func register (user : String , password : String , completion : @escaping (AuthDataResult?, Error?) -> Void) {
+        Auth.auth().createUser(withEmail: user, password: password) { (result, error) -> Void in
+            if error == nil {
+                completion(result, nil)
+            } else {
+                completion(nil, error)
+            }
         }
     }
 }
