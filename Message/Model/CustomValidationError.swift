@@ -9,7 +9,7 @@
 import Foundation
 import Validator
 
-struct ValidatorError: ValidationError {
+struct CustomValidationError: ValidationError {
 
     let message: String
     

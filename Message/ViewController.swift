@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     @IBAction func handleLoginButton(_ sender: UIButton) {
         guard let username = emailTextField.text,
             let password = passwordTextField.text else { return }
-        let minLengthRule = ValidationRuleLength(min: CheckCharater().inputEmpty, error: ValidatorError("error"))
+        let minLengthRule = ValidationRuleLength(min: CheckCharater().inputEmpty, error: CustomValidationError("error"))
         let resultEmail = username.validate(rule: minLengthRule)
         let resultPass = password.validate(rule: minLengthRule)
 
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
             self.showAlert(message: "Vui lòng điền Mật khẩu", title: "Đồng ý")
         }
         
-        let minLengthRulePassword = ValidationRuleLength(min: CheckCharater().passwordMinLength, error:  ValidatorError("error"))
+        let minLengthRulePassword = ValidationRuleLength(min: CheckCharater().passwordMinLength, error:  CustomValidationError("error"))
         let resultPassword = password.validate(rule: minLengthRulePassword)
         
         switch resultPassword {
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
             self.showAlert(message: "Password tối đa 32 ký tự", title: "Đồng ý")
         }
         
-        let maxLengthRule = ValidationRuleLength(max: 5, error:  ValidatorError("error"))
+        let maxLengthRule = ValidationRuleLength(max: 5, error:  CustomValidationError("error"))
         let resultEmailMax = username.validate(rule: maxLengthRule)
         
         switch resultEmailMax {
@@ -100,15 +100,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func handleRegisterButton(_ sender: UIButton) {
-        let registerVC = RegisterVC(nibName: "RegisterVC", bundle: nil)
-        registerVC.modalPresentationStyle = .fullScreen
+        let registerViewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        registerViewController.modalPresentationStyle = .fullScreen
         let transition = CATransition()
         transition.duration = 0.5
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromRight
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         view.window!.layer.add(transition, forKey: kCATransition)
-        self.present(registerVC, animated: false)
+        self.present(registerViewController, animated: false)
     }
     
     func startIndicator() {

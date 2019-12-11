@@ -10,16 +10,16 @@ import UIKit
 import Firebase
 import Validator
 
-private struct CheckCharacter {
+private struct Constants {
     let inputEmpty: Int = 1
 }
 
-class RegisterVC: UIViewController {
+class RegisterViewController: UIViewController {
 
-    @IBOutlet weak var fullnameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet private weak var fullnameTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var indicator: UIView!
     
     let db = Firestore.firestore()
@@ -36,7 +36,7 @@ class RegisterVC: UIViewController {
             let confirmPassword = confirmPasswordTextField.text,
             let fullname = fullnameTextField.text else { return }
         let validatePassword = password == confirmPassword ? true : false
-        let minLengthRule = ValidationRuleLength(min: CheckCharacter().inputEmpty, error: ValidatorError("error"))
+        let minLengthRule = ValidationRuleLength(min: Constants().inputEmpty, error: CustomValidationError("error"))
         let resultEmail = emailTextField.validate(rule: minLengthRule)
         let resultPassword = passwordTextField.validate(rule: minLengthRule)
         

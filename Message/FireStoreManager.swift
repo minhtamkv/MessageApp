@@ -21,12 +21,12 @@ class FireStoreManager {
         }
     }
     
-    func register (user : String , password : String , completion : @escaping (Error? , AuthDataResult?) -> Void) {
+    func register (user : String , password : String , completion : @escaping (AuthDataResult?, Error?) -> Void) {
         Auth.auth().createUser(withEmail: user, password: password) { (result, error) -> Void in
             if error == nil {
-                completion(nil, result)
+                completion(result, nil)
             } else {
-                completion(error, nil)
+                completion(nil, error)
             }
         }
     }

@@ -16,7 +16,7 @@ class UserRepository {
     let defaults = UserDefaults.standard
     let db = Firestore.firestore()
     
-    func login (user: String, password: String, completion: ((String?, Error?) -> Void)?) {
+    func login (user: String, password: String, completion: @escaping ((String?, Error?) -> Void)?) {
         FireStoreManager.shared.login(user: user, password: password) {_, error -> Void in
             if error != nil {
                 completion?("Error", error)
@@ -26,7 +26,7 @@ class UserRepository {
         }
     }
     
-    func register (user: String, password: String, fullname: String, completion: ((String?, Error?) -> Void)?) {        FireStoreManager.shared.register(user: user, password: password) { error, result -> Void in
+    func register (user: String, password: String, fullname: String, completion: @escaping ((String?, Error?) -> Void)?) {        FireStoreManager.shared.register(user: user, password: password) { error, result -> Void in
             if error != nil {
                 guard let `uid` = result?.user.uid else {
                     print("Not user registed")
