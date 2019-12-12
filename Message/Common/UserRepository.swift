@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 import Firebase
+import FirebaseFirestore
 import UIKit
 
 class UserRepository {
@@ -16,17 +17,17 @@ class UserRepository {
     let defaults = UserDefaults.standard
     let db = Firestore.firestore()
     
-    func login (user: String, password: String, completion: @escaping ((String?, Error?) -> Void)?) {
+    func login (user: String, password: String, completion: @escaping ((String?, Error?) -> Void)) {
         FireStoreManager.shared.login(user: user, password: password) {_, error -> Void in
             if error != nil {
-                completion?("Error", error)
+                completion("Error", error)
             } else {
                 self.saveLogin(username: user, password: password)
             }
         }
     }
     
-    func register (user: String, password: String, fullname: String, completion: @escaping ((String?, Error?) -> Void)?) {        FireStoreManager.shared.register(user: user, password: password) { error, result -> Void in
+    func register (user: String, password: String, fullname: String, completion: @escaping ((String?, Error?) -> Void)?) {        FireStoreManager.shared.register(user: user, password: password) { result, error -> Void in
             if error != nil {
                 guard let `uid` = result?.user.uid else {
                     print("Not user registed")

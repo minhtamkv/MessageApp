@@ -12,7 +12,7 @@ struct Room {
     var nameGroup: String = ""
     var idRoom: String = ""
     var image: String = ""
-    var time: Double = 0.0
+    var time: NSNumber = 0
     var uidMember: [String] = [""]
     var arrAdmin: [String] = [""]
 }

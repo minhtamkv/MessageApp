@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		880FA5E42373F3FF0086F172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA5E32373F3FF0086F172 /* AppDelegate.swift */; };
 		880FA5E62373F3FF0086F172 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA5E52373F3FF0086F172 /* SceneDelegate.swift */; };
-		880FA5E82373F3FF0086F172 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA5E72373F3FF0086F172 /* ViewController.swift */; };
+		880FA5E82373F3FF0086F172 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA5E72373F3FF0086F172 /* LoginViewController.swift */; };
 		880FA5EB2373F3FF0086F172 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880FA5E92373F3FF0086F172 /* Main.storyboard */; };
 		880FA5ED2373F3FF0086F172 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880FA5EC2373F3FF0086F172 /* Assets.xcassets */; };
 		880FA5F02373F3FF0086F172 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880FA5EE2373F3FF0086F172 /* LaunchScreen.storyboard */; };
 		880FA5FB2373F4000086F172 /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA5FA2373F4000086F172 /* MessageTests.swift */; };
 		880FA6062373F4000086F172 /* MessageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA6052373F4000086F172 /* MessageUITests.swift */; };
-		880FA6162373FA430086F172 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 880FA6152373FA430086F172 /* GoogleService-Info.plist */; };
 		880FA61E237417420086F172 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA61D237417420086F172 /* UITableViewExtensions.swift */; };
 		880FA622237417D70086F172 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA621237417D70086F172 /* Global.swift */; };
 		882C0602239899F800ED3B3E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C0600239899F800ED3B3E /* RegisterViewController.swift */; };
@@ -25,6 +24,13 @@
 		88491E1C238E776400DB2056 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E1B238E776400DB2056 /* UIViewController+.swift */; };
 		88491E1E238E79F600DB2056 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E1D238E79F600DB2056 /* UserRepository.swift */; };
 		88682F8F23978C0A00EBDFEF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88682F8E23978C0A00EBDFEF /* Person.swift */; };
+		887287E623A1F94200CAF463 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887287E523A1F94200CAF463 /* GroupTableViewCell.swift */; };
+		887287EC23A1F95300CAF463 /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887287E723A1F95200CAF463 /* GroupTableViewCell.xib */; };
+		887287ED23A1F95300CAF463 /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887287E823A1F95200CAF463 /* GroupViewController.xib */; };
+		887287EE23A1F95300CAF463 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887287E923A1F95200CAF463 /* ProfileViewController.swift */; };
+		887287EF23A1F95300CAF463 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887287EA23A1F95200CAF463 /* ProfileViewController.xib */; };
+		887287F023A1F95300CAF463 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887287EB23A1F95200CAF463 /* GroupViewController.swift */; };
+		887F144F23A210C4000A1B8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 887F144E23A210C4000A1B8B /* GoogleService-Info.plist */; };
 		88C4CE622386364C00754C9D /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE612386364C00754C9D /* Room.swift */; };
 		88C4CE64238636A100754C9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE63238636A100754C9D /* User.swift */; };
 		88C4CE66238636F300754C9D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE65238636F300754C9D /* Message.swift */; };
@@ -60,7 +66,7 @@
 		880FA5E02373F3FF0086F172 /* Message.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Message.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		880FA5E32373F3FF0086F172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		880FA5E52373F3FF0086F172 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		880FA5E72373F3FF0086F172 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		880FA5E72373F3FF0086F172 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		880FA5EA2373F3FF0086F172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		880FA5EC2373F3FF0086F172 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		880FA5EF2373F3FF0086F172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,7 +77,6 @@
 		880FA6012373F4000086F172 /* MessageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		880FA6052373F4000086F172 /* MessageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUITests.swift; sourceTree = "<group>"; };
 		880FA6072373F4000086F172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		880FA6152373FA430086F172 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		880FA61D237417420086F172 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		880FA621237417D70086F172 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		882C0600239899F800ED3B3E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +86,13 @@
 		88491E1B238E776400DB2056 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		88491E1D238E79F600DB2056 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		88682F8E23978C0A00EBDFEF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		887287E523A1F94200CAF463 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		887287E723A1F95200CAF463 /* GroupTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
+		887287E823A1F95200CAF463 /* GroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
+		887287E923A1F95200CAF463 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		887287EA23A1F95200CAF463 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		887287EB23A1F95200CAF463 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		887F144E23A210C4000A1B8B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88C4CE612386364C00754C9D /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		88C4CE63238636A100754C9D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88C4CE65238636F300754C9D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -158,10 +170,9 @@
 				88C4CE602386362700754C9D /* Model */,
 				880FA61A237416C80086F172 /* Extensions */,
 				880FA6172374164D0086F172 /* Common */,
-				880FA6152373FA430086F172 /* GoogleService-Info.plist */,
 				880FA5E32373F3FF0086F172 /* AppDelegate.swift */,
 				880FA5E52373F3FF0086F172 /* SceneDelegate.swift */,
-				880FA5E72373F3FF0086F172 /* ViewController.swift */,
+				880FA5E72373F3FF0086F172 /* LoginViewController.swift */,
 				880FA5E92373F3FF0086F172 /* Main.storyboard */,
 				880FA5EC2373F3FF0086F172 /* Assets.xcassets */,
 				880FA5EE2373F3FF0086F172 /* LaunchScreen.storyboard */,
@@ -194,6 +205,13 @@
 		880FA6172374164D0086F172 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				887F144E23A210C4000A1B8B /* GoogleService-Info.plist */,
+				887287E723A1F95200CAF463 /* GroupTableViewCell.xib */,
+				887287EB23A1F95200CAF463 /* GroupViewController.swift */,
+				887287E823A1F95200CAF463 /* GroupViewController.xib */,
+				887287E923A1F95200CAF463 /* ProfileViewController.swift */,
+				887287EA23A1F95200CAF463 /* ProfileViewController.xib */,
+				887287E523A1F94200CAF463 /* GroupTableViewCell.swift */,
 				880FA621237417D70086F172 /* Global.swift */,
 				88491E1D238E79F600DB2056 /* UserRepository.swift */,
 				88682F8E23978C0A00EBDFEF /* Person.swift */,
@@ -343,7 +361,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				880FA5F02373F3FF0086F172 /* LaunchScreen.storyboard in Resources */,
-				880FA6162373FA430086F172 /* GoogleService-Info.plist in Resources */,
+				887F144F23A210C4000A1B8B /* GoogleService-Info.plist in Resources */,
+				887287EC23A1F95300CAF463 /* GroupTableViewCell.xib in Resources */,
+				887287EF23A1F95300CAF463 /* ProfileViewController.xib in Resources */,
+				887287ED23A1F95300CAF463 /* GroupViewController.xib in Resources */,
 				880FA5ED2373F3FF0086F172 /* Assets.xcassets in Resources */,
 				880FA5EB2373F3FF0086F172 /* Main.storyboard in Resources */,
 				882C0603239899F800ED3B3E /* RegisterVC.xib in Resources */,
@@ -510,13 +531,16 @@
 			files = (
 				88491E1E238E79F600DB2056 /* UserRepository.swift in Sources */,
 				880FA61E237417420086F172 /* UITableViewExtensions.swift in Sources */,
-				880FA5E82373F3FF0086F172 /* ViewController.swift in Sources */,
+				880FA5E82373F3FF0086F172 /* LoginViewController.swift in Sources */,
 				88C4CE622386364C00754C9D /* Room.swift in Sources */,
 				88491E1A238E6EFD00DB2056 /* FireStoreManager.swift in Sources */,
 				880FA5E42373F3FF0086F172 /* AppDelegate.swift in Sources */,
+				887287F023A1F95300CAF463 /* GroupViewController.swift in Sources */,
+				887287EE23A1F95300CAF463 /* ProfileViewController.swift in Sources */,
 				88682F8F23978C0A00EBDFEF /* Person.swift in Sources */,
 				880FA5E62373F3FF0086F172 /* SceneDelegate.swift in Sources */,
 				88C4CE66238636F300754C9D /* Message.swift in Sources */,
+				887287E623A1F94200CAF463 /* GroupTableViewCell.swift in Sources */,
 				880FA622237417D70086F172 /* Global.swift in Sources */,
 				88491E1C238E776400DB2056 /* UIViewController+.swift in Sources */,
 				882C06052398B05A00ED3B3E /* CustomValidationError.swift in Sources */,

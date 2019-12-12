@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import Validator
 
 private struct Constants {
@@ -43,6 +44,7 @@ class RegisterViewController: UIViewController {
         switch resultEmail {
         case .valid:
             userRepository.register(user: username, password: password, fullname: fullname, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         case .invalid:
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
         }
@@ -50,6 +52,7 @@ class RegisterViewController: UIViewController {
         switch resultPassword {
         case .valid:
             userRepository.register(user: username, password: password, fullname: fullname, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         case .invalid:
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
         }
@@ -57,10 +60,10 @@ class RegisterViewController: UIViewController {
         switch validatePassword {
         case true:
             userRepository.register(user: username, password: password, fullname: fullname, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         case false:
             self.showAlert(message: "Mật khẩu không xác định", title: "Đồng ý")
         }
-        
     }
     @IBAction func handleBack(_ sender: UIButton) {
         let transition = CATransition()
