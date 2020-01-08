@@ -1,9 +1,9 @@
 //
-//  GroupViewController.swift
+//  GroupView.swift
 //  Message
 //
-//  Created by Minh Tâm on 12/12/19.
-//  Copyright © 2019 Minh Tâm. All rights reserved.
+//  Created by Minh Tâm on 1/8/20.
+//  Copyright © 2020 Minh Tâm. All rights reserved.
 //
 
 import UIKit
@@ -17,21 +17,19 @@ private struct Constants {
 
 class GroupViewController: UIViewController {
 
-    @IBOutlet private weak var searchGroup: UISearchBar!
+    @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet weak var groupTableView: UITableView!
-    private var isChoosen: Bool?
     private var currentTime: NSNumber?
     private var searchRoom = [Room]()
     private let currentUser = Auth.auth().currentUser
     private let db = Firestore.firestore()
     private var rooms = [Room]()
-
     
     let roomRepository = RoomRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configListTableView()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +42,7 @@ class GroupViewController: UIViewController {
         groupTableView.delegate = self
         groupTableView.dataSource = self
     }
-        
+    
     @IBAction func profileTapped(_ sender: UIButton) {
         let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
         profileViewController.modalPresentationStyle = .fullScreen
@@ -54,7 +52,7 @@ class GroupViewController: UIViewController {
     @IBAction func contactTapped(_ sender: UIButton) {
     }
 }
-    
+
 extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,5 +90,3 @@ extension GroupViewController: UISearchBarDelegate {
         groupTableView.reloadData()
     }
 }
-    
-
