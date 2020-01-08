@@ -8,8 +8,11 @@
 
 import UIKit
 import Firebase
+import Reusable
+import SDWebImageSwiftUI
+import SDWebImage
 
-class GroupTableViewCell: UITableViewCell {
+final class GroupTableViewCell: UITableViewCell, Reusable {
 
     @IBOutlet weak var groupImage: UIImageView!
     @IBOutlet weak var groupName: UILabel!
@@ -23,24 +26,14 @@ class GroupTableViewCell: UITableViewCell {
 
     }
     
-    func getImageRoomFromUrl(with url: String){
+    func setupCell(data: Room) {
+        self.groupName?.text = "\(data.nameGroup)"
+        self.getImageRoomFromUrl(with: data.image)
+    }
+    
+    func getImageRoomFromUrl(with url: String) {
         let url = URL(string: url)
-        self.groupImage.kf.setImage(
-            with: url,
-            placeholder: UIImage(named: "Avatar"),
-            options: [
-                //.processor(processor),
-                .cacheOriginalImage
-            ])
-        {
-            result in
-            switch result {
-            case .success(let value):
-                print("Task done for: \(value.source.url?.absoluteString ?? "")")
-            case .failure(let error):
-                print("Job failed: \(error.localizedDescription)")
-            }
-        }
+        self.groupImage.sd_setImage(with: url, completed: nil)
     }
     
 }

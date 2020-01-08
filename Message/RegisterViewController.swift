@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import Validator
+import Then
 
 private struct Constants {
     let inputEmpty: Int = 1
@@ -43,7 +44,11 @@ class RegisterViewController: UIViewController {
         
         switch resultEmail {
         case .valid:
-            userRepository.register(user: username, password: password, fullname: fullname, completion: nil)
+            userRepository.register(user: username, password: password, fullname: fullname, completion: { result, err in
+                if err != nil {
+                    print("\(err)")
+                }
+            })
             self.dismiss(animated: true, completion: nil)
         case .invalid:
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
@@ -51,7 +56,11 @@ class RegisterViewController: UIViewController {
         
         switch resultPassword {
         case .valid:
-            userRepository.register(user: username, password: password, fullname: fullname, completion: nil)
+            userRepository.register(user: username, password: password, fullname: fullname, completion: { result, err in
+                if err != nil {
+                    print("\(err)")
+                }
+            })
             self.dismiss(animated: true, completion: nil)
         case .invalid:
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
@@ -59,19 +68,27 @@ class RegisterViewController: UIViewController {
         
         switch validatePassword {
         case true:
-            userRepository.register(user: username, password: password, fullname: fullname, completion: nil)
+            userRepository.register(user: username, password: password, fullname: fullname, completion: { result, err in
+                if err != nil {
+                    print("\(err)")
+                }
+            })
             self.dismiss(animated: true, completion: nil)
         case false:
             self.showAlert(message: "Mật khẩu không xác định", title: "Đồng ý")
         }
     }
     @IBAction func handleBack(_ sender: UIButton) {
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromLeft
-        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        view.window!.layer.add(transition, forKey: kCATransition)
+        let transition = CATransition().then {
+            $0.duration = 0.5
+            $0.type = CATransitionType.push
+            $0.subtype = CATransitionSubtype.fromLeft
+            $0.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        }
+
+        self.view.window?.layer.add(transition, forKey: kCATransition)
         self.dismiss(animated: false)
+        
+        
     }
 }

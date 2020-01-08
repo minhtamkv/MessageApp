@@ -34,6 +34,7 @@
 		88C4CE622386364C00754C9D /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE612386364C00754C9D /* Room.swift */; };
 		88C4CE64238636A100754C9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE63238636A100754C9D /* User.swift */; };
 		88C4CE66238636F300754C9D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE65238636F300754C9D /* Message.swift */; };
+		88CE818F23C58E6E00E783EA /* RoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE818E23C58E6E00E783EA /* RoomRepository.swift */; };
 		911592C858FC024928B62FB2 /* Pods_Message_MessageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82673EA773A2B5E4E47812C8 /* Pods_Message_MessageUITests.framework */; };
 		A412ED16A5762A9B5B15B645 /* Pods_MessageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CDF3D7406ABD2586ED0A604 /* Pods_MessageTests.framework */; };
 		E2799A043DA8263321B7C7CC /* Pods_Message.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74589430CE7DC29C51C38832 /* Pods_Message.framework */; };
@@ -70,7 +71,6 @@
 		880FA5EA2373F3FF0086F172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		880FA5EC2373F3FF0086F172 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		880FA5EF2373F3FF0086F172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		880FA5F12373F3FF0086F172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		880FA5F62373F4000086F172 /* MessageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		880FA5FA2373F4000086F172 /* MessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
 		880FA5FC2373F4000086F172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,6 +96,7 @@
 		88C4CE612386364C00754C9D /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		88C4CE63238636A100754C9D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88C4CE65238636F300754C9D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		88CE818E23C58E6E00E783EA /* RoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRepository.swift; sourceTree = "<group>"; };
 		95556B6C379E49BAEB744D48 /* Pods-Message.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Message.release.xcconfig"; path = "Target Support Files/Pods-Message/Pods-Message.release.xcconfig"; sourceTree = "<group>"; };
 		F74147A38A6131E04537B142 /* Pods-MessageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageTests.release.xcconfig"; path = "Target Support Files/Pods-MessageTests/Pods-MessageTests.release.xcconfig"; sourceTree = "<group>"; };
 		FBF62FE6E6CCC9A149FE4226 /* Pods-Message-MessageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Message-MessageUITests.debug.xcconfig"; path = "Target Support Files/Pods-Message-MessageUITests/Pods-Message-MessageUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,7 +177,6 @@
 				880FA5E92373F3FF0086F172 /* Main.storyboard */,
 				880FA5EC2373F3FF0086F172 /* Assets.xcassets */,
 				880FA5EE2373F3FF0086F172 /* LaunchScreen.storyboard */,
-				880FA5F12373F3FF0086F172 /* Info.plist */,
 				88491E19238E6EFD00DB2056 /* FireStoreManager.swift */,
 				882C0600239899F800ED3B3E /* RegisterViewController.swift */,
 				882C0601239899F800ED3B3E /* RegisterVC.xib */,
@@ -215,6 +215,7 @@
 				880FA621237417D70086F172 /* Global.swift */,
 				88491E1D238E79F600DB2056 /* UserRepository.swift */,
 				88682F8E23978C0A00EBDFEF /* Person.swift */,
+				88CE818E23C58E6E00E783EA /* RoomRepository.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -541,6 +542,7 @@
 				880FA5E62373F3FF0086F172 /* SceneDelegate.swift in Sources */,
 				88C4CE66238636F300754C9D /* Message.swift in Sources */,
 				887287E623A1F94200CAF463 /* GroupTableViewCell.swift in Sources */,
+				88CE818F23C58E6E00E783EA /* RoomRepository.swift in Sources */,
 				880FA622237417D70086F172 /* Global.swift in Sources */,
 				88491E1C238E776400DB2056 /* UIViewController+.swift in Sources */,
 				882C06052398B05A00ED3B3E /* CustomValidationError.swift in Sources */,

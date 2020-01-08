@@ -10,8 +10,10 @@ target 'Message' do
 	pod 'FirebaseUI'
 	pod 'Firebase/Auth'
 	pod 'Firebase/Storage'
-	pod 'Kingfisher', '~> 5.0'
 	pod 'Validator'
+	pod 'Reusable'
+	pod 'Then'
+	pod 'SDWebImageSwiftUI'
 
   target 'MessageTests' do
     inherit! :search_paths

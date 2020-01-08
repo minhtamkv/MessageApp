@@ -27,7 +27,7 @@ class UserRepository {
         }
     }
     
-    func register (user: String, password: String, fullname: String, completion: @escaping ((String?, Error?) -> Void)?) {        FireStoreManager.shared.register(user: user, password: password) { result, error -> Void in
+    func register (user: String, password: String, fullname: String, completion: @escaping ((String?, Error?) -> Void)) {        FireStoreManager.shared.register(user: user, password: password) { result, error -> Void in
             if error != nil {
                 guard let `uid` = result?.user.uid else {
                     print("Not user registed")

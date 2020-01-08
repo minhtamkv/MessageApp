@@ -10,11 +10,10 @@ import UIKit
 import FirebaseAuth
 import Kingfisher
 import Validator
+import Then
 
 private struct CheckCharater {
     let inputEmpty: Int = 1
-    let emailMaxLength: Int = 32
-    let passwordMinLength: Int = 7
 }
 
 class LoginViewController: UIViewController {
@@ -69,62 +68,31 @@ class LoginViewController: UIViewController {
         case .invalid:
             self.showAlert(message: "Vui lòng điền Mật khẩu", title: "Đồng ý")
         }
-        
-//        let minLengthRulePassword = ValidationRuleLength(min: CheckCharater().passwordMinLength, error:  CustomValidationError("error"))
-//        let resultPassword = password.validate(rule: minLengthRulePassword)
-//
-//        switch resultPassword {
-//        case .valid:
-//            userRepository.login(user: username, password: password) { _, error in
-//                if error != nil {
-//                    self.stopIndicator()
-//                    self.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
-//                } else {
-//                    self.loginAccess()
-//                }
-//            }
-//        case .invalid:
-//            self.showAlert(message: "Password tối đa 32 ký tự", title: "Đồng ý")
-//        }
-        
-        let maxLengthRule = ValidationRuleLength(max: 19, error:  CustomValidationError("error"))
-        let resultEmailMax = username.validate(rule: maxLengthRule)
-        
-        switch resultEmailMax {
-        case .valid:
-            userRepository.login(user: username, password: password) { _, error in
-                if error != nil {
-                    self.stopIndicator()
-                    self.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
-                }
-            }
-            self.loginAccess()
-        case .invalid:
-            self.showAlert(message: "Email tối đa 32 ký tự", title: "Đồng ý")
-        }
     }
     
     func loginAccess() {
         let groupViewController = GroupViewController(nibName: "GroupViewController", bundle: nil)
         groupViewController.modalPresentationStyle = .fullScreen
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromRight
-        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        self.view.window!.layer.add(transition, forKey: kCATransition)
+        let transition = CATransition().then {
+            $0.duration = 0.5
+            $0.type = CATransitionType.push
+            $0.subtype = CATransitionSubtype.fromLeft
+            $0.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        }
+        self.view.window?.layer.add(transition, forKey: kCATransition)
         self.present(groupViewController, animated: false)
     }
     
     @IBAction func handleRegisterButton(_ sender: UIButton) {
-        let registerViewController = RegisterViewController(nibName: "RegisterVC", bundle: nil)
+        let registerViewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
         registerViewController.modalPresentationStyle = .fullScreen
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromRight
-        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        view.window!.layer.add(transition, forKey: kCATransition)
+        let transition = CATransition().then {
+            $0.duration = 0.5
+            $0.type = CATransitionType.push
+            $0.subtype = CATransitionSubtype.fromLeft
+            $0.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        }
+        view.window?.layer.add(transition, forKey: kCATransition)
         self.present(registerViewController, animated: false)
     }
     
