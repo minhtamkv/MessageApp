@@ -15,7 +15,7 @@ import UIKit
 class UserRepository {
     
     let defaults = UserDefaults.standard
-    let db = Firestore.firestore()
+    let database = Firestore.firestore()
     
     func login (user: String, password: String, completion: @escaping ((String?, Error?) -> Void)) {
         FireStoreManager.shared.login(user: user, password: password) {_, error -> Void in
@@ -49,7 +49,7 @@ class UserRepository {
             "birthday" : "",
             "gender" : ""
         ]
-        self.db.collection("users").document(uid).setData(data){ err in
+        self.database.collection("users").document(uid).setData(data){ err in
             if err == nil {
                 print("Set data for \(uid) success")
             } else {

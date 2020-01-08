@@ -14,8 +14,8 @@ import SDWebImage
 
 final class GroupTableViewCell: UITableViewCell, Reusable {
 
-    @IBOutlet weak var groupImage: UIImageView!
-    @IBOutlet weak var groupName: UILabel!
+    @IBOutlet weak var groupImageView: UIImageView!
+    @IBOutlet weak var groupNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,13 +27,13 @@ final class GroupTableViewCell: UITableViewCell, Reusable {
     }
     
     func setupCell(data: Room) {
-        self.groupName?.text = "\(data.nameGroup)"
+        self.groupNameLabel?.text = "\(data.nameGroup)"
         self.getImageRoomFromUrl(with: data.image)
     }
     
     func getImageRoomFromUrl(with url: String) {
         let url = URL(string: url)
-        self.groupImage.sd_setImage(with: url, completed: nil)
+        self.groupImageView.sd_setImage(with: url, completed: nil)
     }
     
 }

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Kingfisher
+import UIKit
 
 extension UIViewController {
     func showAlert(message : String , title : String) {

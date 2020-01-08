@@ -8,15 +8,15 @@
 
 import UIKit
 import FirebaseAuth
-import Kingfisher
 import Validator
 import Then
+import Reusable
 
 private struct CheckCharater {
     let inputEmpty: Int = 1
 }
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, StoryboardSceneBased {
 
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var checkLoginButton: UIButton!
@@ -26,8 +26,11 @@ class LoginViewController: UIViewController {
     let defaults = UserDefaults.standard
     let userRepository = UserRepository()
     
+    static let sceneStoryboard = UIStoryboard(name: "RegisterViewController", bundle: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.modalPresentationStyle = .fullScreen
         
         configViews()
     }
@@ -80,22 +83,21 @@ class LoginViewController: UIViewController {
             $0.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         }
         self.view.window?.layer.add(transition, forKey: kCATransition)
-        self.present(groupViewController, animated: false)
+        
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
+    
     @IBAction func handleRegisterButton(_ sender: UIButton) {
-        let registerViewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
-        registerViewController.modalPresentationStyle = .fullScreen
         let transition = CATransition().then {
             $0.duration = 0.5
             $0.type = CATransitionType.push
-            $0.subtype = CATransitionSubtype.fromLeft
+            $0.subtype = CATransitionSubtype.fromRight
             $0.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         }
         view.window?.layer.add(transition, forKey: kCATransition)
-        self.present(registerViewController, animated: false)
+        self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
-    
     func startIndicator() {
         indicator.isHidden = false
         indicator.startAnimating()

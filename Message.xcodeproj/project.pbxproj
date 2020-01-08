@@ -17,8 +17,6 @@
 		880FA6062373F4000086F172 /* MessageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA6052373F4000086F172 /* MessageUITests.swift */; };
 		880FA61E237417420086F172 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA61D237417420086F172 /* UITableViewExtensions.swift */; };
 		880FA622237417D70086F172 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA621237417D70086F172 /* Global.swift */; };
-		882C0602239899F800ED3B3E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C0600239899F800ED3B3E /* RegisterViewController.swift */; };
-		882C0603239899F800ED3B3E /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882C0601239899F800ED3B3E /* RegisterVC.xib */; };
 		882C06052398B05A00ED3B3E /* CustomValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C06042398B05A00ED3B3E /* CustomValidationError.swift */; };
 		88491E1A238E6EFD00DB2056 /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E19238E6EFD00DB2056 /* FireStoreManager.swift */; };
 		88491E1C238E776400DB2056 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E1B238E776400DB2056 /* UIViewController+.swift */; };
@@ -26,15 +24,12 @@
 		88682F8F23978C0A00EBDFEF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88682F8E23978C0A00EBDFEF /* Person.swift */; };
 		887287E623A1F94200CAF463 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887287E523A1F94200CAF463 /* GroupTableViewCell.swift */; };
 		887287EC23A1F95300CAF463 /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887287E723A1F95200CAF463 /* GroupTableViewCell.xib */; };
-		887287ED23A1F95300CAF463 /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887287E823A1F95200CAF463 /* GroupViewController.xib */; };
-		887287EE23A1F95300CAF463 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887287E923A1F95200CAF463 /* ProfileViewController.swift */; };
-		887287EF23A1F95300CAF463 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887287EA23A1F95200CAF463 /* ProfileViewController.xib */; };
-		887287F023A1F95300CAF463 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887287EB23A1F95200CAF463 /* GroupViewController.swift */; };
+		889E334923C5E53E007058A3 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E334823C5E53E007058A3 /* GroupViewController.swift */; };
 		88C4CE622386364C00754C9D /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE612386364C00754C9D /* Room.swift */; };
 		88C4CE64238636A100754C9D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE63238636A100754C9D /* User.swift */; };
 		88C4CE66238636F300754C9D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C4CE65238636F300754C9D /* Message.swift */; };
 		88CE818F23C58E6E00E783EA /* RoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE818E23C58E6E00E783EA /* RoomRepository.swift */; };
-		88CE819123C59D9600E783EA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88CE819023C59D9600E783EA /* Info.plist */; };
+		88CE819523C5CF3500E783EA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE819423C5CF3500E783EA /* RegisterViewController.swift */; };
 		911592C858FC024928B62FB2 /* Pods_Message_MessageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82673EA773A2B5E4E47812C8 /* Pods_Message_MessageUITests.framework */; };
 		A412ED16A5762A9B5B15B645 /* Pods_MessageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CDF3D7406ABD2586ED0A604 /* Pods_MessageTests.framework */; };
 		E2799A043DA8263321B7C7CC /* Pods_Message.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74589430CE7DC29C51C38832 /* Pods_Message.framework */; };
@@ -79,8 +74,6 @@
 		880FA6072373F4000086F172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		880FA61D237417420086F172 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		880FA621237417D70086F172 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		882C0600239899F800ED3B3E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		882C0601239899F800ED3B3E /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
 		882C06042398B05A00ED3B3E /* CustomValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomValidationError.swift; sourceTree = "<group>"; };
 		88491E19238E6EFD00DB2056 /* FireStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
 		88491E1B238E776400DB2056 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -88,15 +81,13 @@
 		88682F8E23978C0A00EBDFEF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		887287E523A1F94200CAF463 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		887287E723A1F95200CAF463 /* GroupTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
-		887287E823A1F95200CAF463 /* GroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
-		887287E923A1F95200CAF463 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		887287EA23A1F95200CAF463 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
-		887287EB23A1F95200CAF463 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		889E334823C5E53E007058A3 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		88C4CE612386364C00754C9D /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		88C4CE63238636A100754C9D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88C4CE65238636F300754C9D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		88CE818E23C58E6E00E783EA /* RoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRepository.swift; sourceTree = "<group>"; };
 		88CE819023C59D9600E783EA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88CE819423C5CF3500E783EA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		95556B6C379E49BAEB744D48 /* Pods-Message.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Message.release.xcconfig"; path = "Target Support Files/Pods-Message/Pods-Message.release.xcconfig"; sourceTree = "<group>"; };
 		F74147A38A6131E04537B142 /* Pods-MessageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageTests.release.xcconfig"; path = "Target Support Files/Pods-MessageTests/Pods-MessageTests.release.xcconfig"; sourceTree = "<group>"; };
 		FBF62FE6E6CCC9A149FE4226 /* Pods-Message-MessageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Message-MessageUITests.debug.xcconfig"; path = "Target Support Files/Pods-Message-MessageUITests/Pods-Message-MessageUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,15 +163,14 @@
 				880FA61A237416C80086F172 /* Extensions */,
 				880FA6172374164D0086F172 /* Common */,
 				880FA5E32373F3FF0086F172 /* AppDelegate.swift */,
-				88CE819023C59D9600E783EA /* Info.plist */,
 				880FA5E52373F3FF0086F172 /* SceneDelegate.swift */,
+				88CE819423C5CF3500E783EA /* RegisterViewController.swift */,
 				880FA5E72373F3FF0086F172 /* LoginViewController.swift */,
 				880FA5E92373F3FF0086F172 /* Main.storyboard */,
 				880FA5EC2373F3FF0086F172 /* Assets.xcassets */,
 				880FA5EE2373F3FF0086F172 /* LaunchScreen.storyboard */,
 				88491E19238E6EFD00DB2056 /* FireStoreManager.swift */,
-				882C0600239899F800ED3B3E /* RegisterViewController.swift */,
-				882C0601239899F800ED3B3E /* RegisterVC.xib */,
+				88CE819023C59D9600E783EA /* Info.plist */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -207,15 +197,12 @@
 			isa = PBXGroup;
 			children = (
 				887287E723A1F95200CAF463 /* GroupTableViewCell.xib */,
-				887287EB23A1F95200CAF463 /* GroupViewController.swift */,
-				887287E823A1F95200CAF463 /* GroupViewController.xib */,
-				887287E923A1F95200CAF463 /* ProfileViewController.swift */,
-				887287EA23A1F95200CAF463 /* ProfileViewController.xib */,
 				887287E523A1F94200CAF463 /* GroupTableViewCell.swift */,
 				880FA621237417D70086F172 /* Global.swift */,
 				88491E1D238E79F600DB2056 /* UserRepository.swift */,
 				88682F8E23978C0A00EBDFEF /* Person.swift */,
 				88CE818E23C58E6E00E783EA /* RoomRepository.swift */,
+				889E334823C5E53E007058A3 /* GroupViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -362,13 +349,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				880FA5F02373F3FF0086F172 /* LaunchScreen.storyboard in Resources */,
-				88CE819123C59D9600E783EA /* Info.plist in Resources */,
 				887287EC23A1F95300CAF463 /* GroupTableViewCell.xib in Resources */,
-				887287EF23A1F95300CAF463 /* ProfileViewController.xib in Resources */,
-				887287ED23A1F95300CAF463 /* GroupViewController.xib in Resources */,
 				880FA5ED2373F3FF0086F172 /* Assets.xcassets in Resources */,
 				880FA5EB2373F3FF0086F172 /* Main.storyboard in Resources */,
-				882C0603239899F800ED3B3E /* RegisterVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,13 +514,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				88491E1E238E79F600DB2056 /* UserRepository.swift in Sources */,
+				88CE819523C5CF3500E783EA /* RegisterViewController.swift in Sources */,
 				880FA61E237417420086F172 /* UITableViewExtensions.swift in Sources */,
 				880FA5E82373F3FF0086F172 /* LoginViewController.swift in Sources */,
 				88C4CE622386364C00754C9D /* Room.swift in Sources */,
 				88491E1A238E6EFD00DB2056 /* FireStoreManager.swift in Sources */,
 				880FA5E42373F3FF0086F172 /* AppDelegate.swift in Sources */,
-				887287F023A1F95300CAF463 /* GroupViewController.swift in Sources */,
-				887287EE23A1F95300CAF463 /* ProfileViewController.swift in Sources */,
 				88682F8F23978C0A00EBDFEF /* Person.swift in Sources */,
 				880FA5E62373F3FF0086F172 /* SceneDelegate.swift in Sources */,
 				88C4CE66238636F300754C9D /* Message.swift in Sources */,
@@ -546,8 +528,8 @@
 				880FA622237417D70086F172 /* Global.swift in Sources */,
 				88491E1C238E776400DB2056 /* UIViewController+.swift in Sources */,
 				882C06052398B05A00ED3B3E /* CustomValidationError.swift in Sources */,
+				889E334923C5E53E007058A3 /* GroupViewController.swift in Sources */,
 				88C4CE64238636A100754C9D /* User.swift in Sources */,
-				882C0602239899F800ED3B3E /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

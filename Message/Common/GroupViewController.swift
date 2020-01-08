@@ -9,20 +9,21 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import Reusable
 
 private struct Constants {
     let numberOfSections: Int = 1
     let heightForRow: CGFloat = 80
 }
 
-class GroupViewController: UIViewController {
+class GroupViewController: UIViewController, StoryboardBased {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet weak var groupTableView: UITableView!
     private var currentTime: NSNumber?
-    private var searchRoom = [Room]()
+    private var searchRooms = [Room]()
     private let currentUser = Auth.auth().currentUser
-    private let db = Firestore.firestore()
+    private let database = Firestore.firestore()
     private var rooms = [Room]()
     
     let roomRepository = RoomRepository()
@@ -44,9 +45,8 @@ class GroupViewController: UIViewController {
     }
     
     @IBAction func profileTapped(_ sender: UIButton) {
-        let profileViewController = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
-        profileViewController.modalPresentationStyle = .fullScreen
-        self.present(profileViewController, animated: false, completion: nil)
+//        profileViewController.modalPresentationStyle = .fullScreen
+//        self.present(profileViewController, animated: false, completion: nil)
     }
     
     @IBAction func contactTapped(_ sender: UIButton) {
@@ -56,7 +56,7 @@ class GroupViewController: UIViewController {
 extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchRoom.count
+        return searchRooms.count
     }
         
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -69,7 +69,7 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = groupTableView.dequeueReusableCell(for: indexPath) as GroupTableViewCell
-        let room = searchRoom[indexPath.row]
+        let room = searchRooms[indexPath.row]
         cell.setupCell(data: room)
             
         roomRepository.getInfoRoom(room: room)
@@ -80,11 +80,11 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
 extension GroupViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
-            searchRoom = rooms
+            searchRooms = rooms
             groupTableView.reloadData()
             return
         }
-        searchRoom = rooms.filter {
+        searchRooms = rooms.filter {
             $0.nameGroup.lowercased().contains(searchText.lowercased())
         }
         groupTableView.reloadData()

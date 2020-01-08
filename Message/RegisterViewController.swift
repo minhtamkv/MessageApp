@@ -25,7 +25,7 @@ class RegisterViewController: UIViewController, StoryboardBased {
     
     @IBOutlet private weak var passwordTextField: UITextField!
     
-    let db = Firestore.firestore()
+    let database = Firestore.firestore()
     let userRepository = UserRepository()
     
     
@@ -33,7 +33,6 @@ class RegisterViewController: UIViewController, StoryboardBased {
     @IBOutlet private weak var confirmPasswordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -50,11 +49,10 @@ class RegisterViewController: UIViewController, StoryboardBased {
         switch resultEmail {
         case .valid:
             userRepository.register(user: username, password: password, fullname: fullname, completion: { result, err in
-                if err != nil {
-                    print("\(err)")
-                }
+                guard let err = err else { return }
+                print("\(err)")
             })
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: nil)
         case .invalid:
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
         }
@@ -62,11 +60,10 @@ class RegisterViewController: UIViewController, StoryboardBased {
         switch resultPassword {
         case .valid:
             userRepository.register(user: username, password: password, fullname: fullname, completion: { result, err in
-                if err != nil {
-                    print("\(err)")
-                }
+                guard let err = err else { return }
+                print("\(err)")
             })
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: nil)
         case .invalid:
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
         }
@@ -74,11 +71,10 @@ class RegisterViewController: UIViewController, StoryboardBased {
         switch validatePassword {
         case true:
             userRepository.register(user: username, password: password, fullname: fullname, completion: { result, err in
-                if err != nil {
-                    print("\(err)")
-                }
+                guard let err = err else { return }
+                print("\(err)")
             })
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: nil)
         case false:
             self.showAlert(message: "Mật khẩu không xác định", title: "Đồng ý")
         }
@@ -90,7 +86,6 @@ class RegisterViewController: UIViewController, StoryboardBased {
             $0.subtype = CATransitionSubtype.fromLeft
             $0.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         }
-        
         self.view.window?.layer.add(transition, forKey: kCATransition)
         self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
