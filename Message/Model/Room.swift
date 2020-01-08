@@ -14,13 +14,13 @@ struct Room {
     var image: String = ""
     var time: NSNumber = 0
     var uidMember: [String] = [""]
-    var arrAdmin: [String] = [""]
+    var admins: [String] = [""]
     
-    init(image: String, nameGroup: String, time: NSNumber, arrAdmin: [String], members: [String], idRoom: String) {
+    init(image: String, nameGroup: String, time: NSNumber, admins: [String], members: [String], idRoom: String) {
         self.image = image
         self.nameGroup = nameGroup
         self.time = time
-        self.arrAdmin = arrAdmin
+        self.admins = admins
         self.uidMember = members
         self.idRoom = idRoom
     }
@@ -32,7 +32,7 @@ struct Room {
         let time = dictionary["time"] as? NSNumber ?? 0
         let admins = dictionary["arrAdmin"] as? [String] ?? [""]
         
-        let room = Room(image: image, nameGroup: nameGroup, time: time, arrAdmin: admins, members: members, idRoom: idRoom)
+        let room = Room(image: image, nameGroup: nameGroup, time: time, admins: admins, members: members, idRoom: idRoom)
         return room
     }
 }
