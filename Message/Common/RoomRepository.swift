@@ -13,6 +13,7 @@ import FirebaseFirestore
 private enum FirebaseConstant {
     static let message = "message"
     static let msg = "msg"
+    static let room = "room"
 }
 
 class RoomRepository {
@@ -53,7 +54,7 @@ class RoomRepository {
     
     func getRooms() {
         DispatchQueue.global().async {
-            let getRoom = self.database.collection("room")
+            let getRoom = self.database.collection(FirebaseConstant.room)
             getRoom.order(by: "time", descending: true).limit(to: 3)
             DispatchQueue.main.async {
                 getRoom.addSnapshotListener { (querySnapshot, err) in

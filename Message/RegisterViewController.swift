@@ -14,7 +14,7 @@ import Then
 import Reusable
 
 private struct Constants {
-    let inputEmpty: Int = 1
+    let inputEmpty = 1
 }
 
 final class RegisterViewController: UIViewController {    

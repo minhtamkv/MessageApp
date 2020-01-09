@@ -13,7 +13,7 @@ import Reusable
 import Then
 
 private enum Constants {
-    static let numberOfSections: Int = 1
+    static let numberOfSections = 1
     static let heightForRow: CGFloat = 80
 }
 

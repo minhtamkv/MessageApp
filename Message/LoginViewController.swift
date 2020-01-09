@@ -25,9 +25,7 @@ final class LoginViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     let userRepository = UserRepository()
-    
-    static let sceneStoryboard = UIStoryboard(name: "RegisterViewController", bundle: nil)
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -103,5 +101,9 @@ final class LoginViewController: UIViewController {
         indicator.isHidden = true
         indicator.stopAnimating()
     }
+}
+
+extension LoginViewController: StoryboardSceneBased {
+    static let sceneStoryboard = UIStoryboard(name: "CustomVC", bundle: nil)
 }
 
