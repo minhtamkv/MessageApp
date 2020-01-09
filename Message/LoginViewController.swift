@@ -13,7 +13,7 @@ import Then
 import Reusable
 
 private enum CheckCharater {
-    static let inputEmpty: Int = 1
+    static let inputEmpty = 1
 }
 
 final class LoginViewController: UIViewController {
