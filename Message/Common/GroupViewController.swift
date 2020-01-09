@@ -41,9 +41,11 @@ class GroupViewController: UIViewController, StoryboardBased {
     }
     
     func configListTableView() {
-        groupTableView.register(cellType: GroupTableViewCell.self)
-        groupTableView.delegate = self
-        groupTableView.dataSource = self
+        groupTableView.do {
+            $0.register(cellType: GroupTableViewCell.self)
+            $0.delegate = self
+            $0.dataSource = self
+        }
     }
     
     @IBAction func profileTapped(_ sender: UIButton) {
