@@ -9,13 +9,12 @@
 import UIKit
 import Firebase
 import Reusable
-import SDWebImageSwiftUI
 import SDWebImage
 
 final class GroupTableViewCell: UITableViewCell, Reusable {
 
-    @IBOutlet weak var groupImageView: UIImageView!
-    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet private weak var groupImageView: UIImageView!
+    @IBOutlet private weak var groupNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,13 +26,12 @@ final class GroupTableViewCell: UITableViewCell, Reusable {
     }
     
     func setupCell(data: Room) {
-        self.groupNameLabel?.text = "\(data.nameGroup)"
-        self.getImageRoomFromUrl(with: data.image)
+        groupNameLabel?.text = "\(data.nameGroup)"
+        getImageRoomFromUrl(with: data.image)
     }
     
-    func getImageRoomFromUrl(with url: String) {
+    private func getImageRoomFromUrl(with url: String) {
         let url = URL(string: url)
         self.groupImageView.sd_setImage(with: url, completed: nil)
     }
-    
 }

@@ -14,8 +14,8 @@ import UIKit
 
 class UserRepository {
     
-    let defaults = UserDefaults.standard
-    let database = Firestore.firestore()
+    private let defaults = UserDefaults.standard
+    private let database = Firestore.firestore()
     
     func login (user: String, password: String, completion: @escaping ((String?, Error?) -> Void)) {
         FireStoreManager.shared.login(user: user, password: password) {_, error -> Void in

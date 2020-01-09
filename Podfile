@@ -13,7 +13,8 @@ target 'Message' do
 	pod 'Validator'
 	pod 'Reusable'
 	pod 'Then'
-	pod 'SDWebImageSwiftUI'
+	pod 'SDWebImage'
+	pod 'SwiftLint'
 
   target 'MessageTests' do
     inherit! :search_paths

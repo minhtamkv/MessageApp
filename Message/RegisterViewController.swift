@@ -17,20 +17,16 @@ private struct Constants {
     let inputEmpty: Int = 1
 }
 
-class RegisterViewController: UIViewController, StoryboardBased {    
+final class RegisterViewController: UIViewController {    
 
     @IBOutlet private weak var fullnameTextField: UITextField!
-    
     @IBOutlet private weak var emailTextField: UITextField!
-    
     @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var confirmPasswordTextField: UITextField!
     
     let database = Firestore.firestore()
     let userRepository = UserRepository()
-    
-    
-   
-    @IBOutlet private weak var confirmPasswordTextField: UITextField!
+           
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -48,10 +44,10 @@ class RegisterViewController: UIViewController, StoryboardBased {
         
         switch resultEmail {
         case .valid:
-            userRepository.register(user: username, password: password, fullname: fullname, completion: { result, err in
+            userRepository.register(user: username, password: password, fullname: fullname) { result, err in
                 guard let err = err else { return }
                 print("\(err)")
-            })
+            }
             self.dismiss(animated: false, completion: nil)
         case .invalid:
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
@@ -59,10 +55,10 @@ class RegisterViewController: UIViewController, StoryboardBased {
         
         switch resultPassword {
         case .valid:
-            userRepository.register(user: username, password: password, fullname: fullname, completion: { result, err in
+            userRepository.register(user: username, password: password, fullname: fullname) { result, err in
                 guard let err = err else { return }
                 print("\(err)")
-            })
+            }
             self.dismiss(animated: false, completion: nil)
         case .invalid:
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
@@ -70,10 +66,10 @@ class RegisterViewController: UIViewController, StoryboardBased {
         
         switch validatePassword {
         case true:
-            userRepository.register(user: username, password: password, fullname: fullname, completion: { result, err in
+            userRepository.register(user: username, password: password, fullname: fullname) { result, err in
                 guard let err = err else { return }
                 print("\(err)")
-            })
+            }
             self.dismiss(animated: false, completion: nil)
         case false:
             self.showAlert(message: "Mật khẩu không xác định", title: "Đồng ý")

@@ -10,23 +10,24 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import Reusable
+import Then
 
-private struct Constants {
-    let numberOfSections: Int = 1
-    let heightForRow: CGFloat = 80
+private enum Constants {
+    static let numberOfSections: Int = 1
+    static let heightForRow: CGFloat = 80
 }
 
 class GroupViewController: UIViewController, StoryboardBased {
 
     @IBOutlet private weak var searchBar: UISearchBar!
-    @IBOutlet weak var groupTableView: UITableView!
+    @IBOutlet private weak var groupTableView: UITableView!
     private var currentTime: NSNumber?
     private var searchRooms = [Room]()
     private let currentUser = Auth.auth().currentUser
     private let database = Firestore.firestore()
     private var rooms = [Room]()
     
-    let roomRepository = RoomRepository()
+    private let roomRepository = RoomRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class GroupViewController: UIViewController, StoryboardBased {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         roomRepository.getRooms()
         groupTableView.reloadData()
     }
@@ -45,8 +47,6 @@ class GroupViewController: UIViewController, StoryboardBased {
     }
     
     @IBAction func profileTapped(_ sender: UIButton) {
-//        profileViewController.modalPresentationStyle = .fullScreen
-//        self.present(profileViewController, animated: false, completion: nil)
     }
     
     @IBAction func contactTapped(_ sender: UIButton) {
@@ -60,19 +60,19 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
     }
         
     func numberOfSections(in tableView: UITableView) -> Int {
-        return Constants().numberOfSections
+        return Constants.numberOfSections
     }
         
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Constants().heightForRow
+        return Constants.heightForRow
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = groupTableView.dequeueReusableCell(for: indexPath) as GroupTableViewCell
-        let room = searchRooms[indexPath.row]
-        cell.setupCell(data: room)
-            
-        roomRepository.getInfoRoom(room: room)
+        let cell = groupTableView.dequeueReusableCell(for: indexPath, cellType: GroupTableViewCell.self).then {
+            let room = searchRooms[indexPath.row]
+            $0.setupCell(data: room)
+            roomRepository.getInfoOfRoom(room: room)
+        }
         return cell
     }
 }

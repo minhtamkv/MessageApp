@@ -12,11 +12,11 @@ import Validator
 import Then
 import Reusable
 
-private struct CheckCharater {
-    let inputEmpty: Int = 1
+private enum CheckCharater {
+    static let inputEmpty: Int = 1
 }
 
-class LoginViewController: UIViewController, StoryboardSceneBased {
+final class LoginViewController: UIViewController {
 
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var checkLoginButton: UIButton!
@@ -30,7 +30,6 @@ class LoginViewController: UIViewController, StoryboardSceneBased {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.modalPresentationStyle = .fullScreen
         
         configViews()
     }
@@ -42,7 +41,7 @@ class LoginViewController: UIViewController, StoryboardSceneBased {
     @IBAction func handleLoginButton(_ sender: UIButton) {
         guard let username = emailTextField.text,
             let password = passwordTextField.text else { return }
-        let minLengthRule = ValidationRuleLength(min: CheckCharater().inputEmpty, error: CustomValidationError("error"))
+        let minLengthRule = ValidationRuleLength(min: CheckCharater.inputEmpty, error: CustomValidationError("error"))
         let resultEmail = username.validate(rule: minLengthRule)
         let resultPass = password.validate(rule: minLengthRule)
 
@@ -74,8 +73,6 @@ class LoginViewController: UIViewController, StoryboardSceneBased {
     }
     
     func loginAccess() {
-        let groupViewController = GroupViewController(nibName: "GroupViewController", bundle: nil)
-        groupViewController.modalPresentationStyle = .fullScreen
         let transition = CATransition().then {
             $0.duration = 0.5
             $0.type = CATransitionType.push
@@ -83,7 +80,6 @@ class LoginViewController: UIViewController, StoryboardSceneBased {
             $0.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         }
         self.view.window?.layer.add(transition, forKey: kCATransition)
-        
         self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     

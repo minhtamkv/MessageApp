@@ -10,15 +10,25 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
+private enum FirebaseConstant {
+    static let message = "message"
+    static let msg = "msg"
+}
+
 class RoomRepository {
-    let database = Firestore.firestore()
-    var messages = [Message]()
-    let currentUser = Auth.auth().currentUser
-    var rooms = [Room]()
-    var searchRooms = [Room]()
     
-    func getInfoRoom(room: Room) {
-        database.collection("message").document(room.idRoom).collection("msg").addSnapshotListener { [weak self] (querySnapshot, err) in
+    private var messages = [Message]()
+    private var rooms = [Room]()
+    private var searchRooms = [Room]()
+    
+    private let database = Firestore.firestore()
+    private let currentUser = Auth.auth().currentUser
+    
+    func getInfoOfRoom(room: Room) {
+        database.collection(FirebaseConstant.message)
+            .document(room.idRoom)
+            .collection(FirebaseConstant.msg)
+            .addSnapshotListener { [weak self] (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
