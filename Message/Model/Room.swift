@@ -35,4 +35,14 @@ struct Room {
         let room = Room(image: image, nameGroup: nameGroup, time: time, admins: admins, members: members, idRoom: idRoom)
         return room
     }
+    
+    static func addDataRoom(groupName: String, time: NSNumber, selectUserArray: [String]) -> [String : Any] {
+        let dataRoom : [String : Any] = [
+            "nameRoom" : groupName,
+            "time" : time,
+            "uidMember" : selectUserArray,
+            "image" : "",
+        ]
+        return dataRoom
+    }
 }

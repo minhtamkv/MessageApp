@@ -89,8 +89,9 @@ final class LoginViewController: UIViewController {
             $0.subtype = CATransitionSubtype.fromRight
             $0.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         }
-        view.window?.layer.add(transition, forKey: kCATransition)
-        self.presentingViewController?.dismiss(animated: false, completion: nil)
+//        view.window?.layer.add(transition, forKey: kCATransition)
+//        self.presentingViewController?.dismiss(animated: false, completion: nil)
+
     }
     func startIndicator() {
         indicator.isHidden = false
@@ -104,6 +105,6 @@ final class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: StoryboardSceneBased {
-    static let sceneStoryboard = UIStoryboard(name: "CustomVC", bundle: nil)
+    static let sceneStoryboard = UIStoryboard(name: "RegisterViewController", bundle: nil)
 }
 
