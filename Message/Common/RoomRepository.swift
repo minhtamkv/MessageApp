@@ -106,8 +106,7 @@ class RoomRepository {
            .document(currentUser.uid)
         reference
             .updateData([
-                "rooms": FieldValue.arrayUnion([uidRoom])
-            ])
+                "rooms": FieldValue.arrayUnion([uidRoom]) ])
         database
            .collection(FirebaseConstant.users)
            .getDocuments() { [weak self] querySnapshot, error in

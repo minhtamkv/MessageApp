@@ -34,19 +34,6 @@ struct User {
     var isSelected: Bool = false
     var numberPhone: String = ""
     
-    init(userName: String, image: String, email: String,
-         uid: String, senderType: SenderType, gender: Gender,
-         roomArray: [String], numberPhone: String) {
-        self.userName = userName
-        self.image = image
-        self.email = email
-        self.uid = uid
-        self.roomArray = roomArray
-        self.senderType = senderType
-        self.gender = gender
-        self.numberPhone = numberPhone
-    }
-    
     static func map(uid: String, dictionary: [String: Any]) -> User {
         let currentUser = Auth.auth().currentUser
         let userName = dictionary["userName"] as? String ?? ""
@@ -58,9 +45,7 @@ struct User {
         
         let senderType: SenderType = uid == currentUser?.uid ? .send : .receive
         
-        let user = User(userName: userName, image: image, email: email,
-                        uid: uid, senderType: senderType, gender: gender,
-                        roomArray: roomArray, numberPhone: numberPhone)
+        let user = User(uid: uid, email: email, userName: userName, gender: gender, senderType: senderType, image: image, roomArray: roomArray, numberPhone: numberPhone)
         
         return user
     }

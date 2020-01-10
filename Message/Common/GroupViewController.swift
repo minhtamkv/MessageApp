@@ -52,7 +52,7 @@ class GroupViewController: UIViewController, StoryboardBased {
     func getRoom() {
         rooms = [Room]()
         roomRepository.getRooms() { [weak self] result, error in
-            self?.rooms.append(result ?? Room(image: "", nameGroup: "", time: 0, admins: [""], members: [""], idRoom: ""))
+            self?.rooms.append(result ?? Room(nameGroup: "", idRoom: "", image: "", time: 0, uidMember: [""], admins: [""]))
         }
         searchRooms = rooms
     }

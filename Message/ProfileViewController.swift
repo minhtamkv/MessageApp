@@ -88,10 +88,7 @@ final class ProfileViewController: UIViewController {
             if error != nil {
                 self?.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
             } else {
-                self?.setupProfileView(user: result ?? User(userName: "", image: "", email: "",
-                                                            uid: "", senderType: .unknown,
-                                                            gender: .unknown, roomArray: [""],
-                                                            numberPhone: ""))
+                self?.setupProfileView(user: result ?? User(uid: "", email: "", userName: "", gender: .unknown, senderType: .unknown, image: "", roomArray: [""], numberPhone: ""))
             }
         }
     }

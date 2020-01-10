@@ -19,17 +19,6 @@ struct Message {
     var height: CGFloat = 0.0
     var width: CGFloat = 0.0
     
-    init(idMessage: String, content: String, uidRoom: String, image: String, timeSend: Double, uidUser: String, height: CGFloat, width: CGFloat) {
-        self.idMessage = idMessage
-        self.content = content
-        self.uidRoom = uidRoom
-        self.image = image
-        self.timeSend = timeSend
-        self.uidUser = uidUser
-        self.height = height
-        self.width = width
-    }
-    
     static func map(idMessage: String, dictionary: [String: Any]) -> Message {
         let content = dictionary["content"] as? String ?? ""
         let uidRoom = dictionary["toRoom"] as? String ?? ""
