@@ -88,17 +88,20 @@ final class ProfileViewController: UIViewController {
             if error != nil {
                 self?.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
             } else {
-                self?.setupProfileView(user: result ?? User(userName: "", image: "", email: "", uid: "", senderType: .unknown, gender: .unknown, roomArray: [""], numberPhone: ""))
+                self?.setupProfileView(user: result ?? User(userName: "", image: "", email: "",
+                                                            uid: "", senderType: .unknown,
+                                                            gender: .unknown, roomArray: [""],
+                                                            numberPhone: ""))
             }
         }
     }
     
     func setupProfileView(user: User) {
-        self.userNameLabel.text = user.userName
-        self.emailLabel.text = user.email
+        userNameLabel.text = user.userName
+        emailLabel.text = user.email
         
         let url = URL(string: user.image)
-        self.avatarImageView.sd_setImage(with: url, completed: nil)
+        avatarImageView.sd_setImage(with: url, completed: nil)
     }
 
     @IBAction func maleTapped(_ sender: UIButton) {
@@ -121,8 +124,9 @@ final class ProfileViewController: UIViewController {
     
 }
 
-extension ProfileViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[.originalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")

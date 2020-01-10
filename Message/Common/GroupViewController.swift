@@ -50,11 +50,11 @@ class GroupViewController: UIViewController, StoryboardBased {
     }
     
     func getRoom() {
-        self.rooms = [Room]()
-        roomRepository.getRooms() { result, err in
+        rooms = [Room]()
+        roomRepository.getRooms() { result, error in
             self.rooms.append(result ?? Room(image: "", nameGroup: "", time: 0, admins: [""], members: [""], idRoom: ""))
         }
-        self.searchRooms = self.rooms
+        searchRooms = rooms
     }
     
     @IBAction func contactTapped(_ sender: UIButton) {

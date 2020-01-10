@@ -19,22 +19,10 @@ class ChooseMemberTableViewCell: UITableViewCell, Reusable {
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var chooseButton: UIButton!
-        
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func setupCell(data: User) {
         userNameLabel?.text = "\(data.userName)"
         let url = URL(string: data.image)
-        self.userImageView.sd_setImage(with: url, completed: nil)
-        
+        userImageView.sd_setImage(with: url, completed: nil)        
     }
 }

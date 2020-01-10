@@ -34,7 +34,9 @@ struct User {
     var isSelected: Bool = false
     var numberPhone: String = ""
     
-    init(userName: String, image: String, email: String, uid: String, senderType: SenderType, gender: Gender, roomArray: [String], numberPhone: String) {
+    init(userName: String, image: String, email: String,
+         uid: String, senderType: SenderType, gender: Gender,
+         roomArray: [String], numberPhone: String) {
         self.userName = userName
         self.image = image
         self.email = email
@@ -50,14 +52,15 @@ struct User {
         let userName = dictionary["userName"] as? String ?? ""
         let email = dictionary["email"] as? String ?? ""
         let image = dictionary["image"] as? String ?? ""
-        let roomArray = dictionary["arrRoom"] as? [String] ?? [""]
+        let roomArray = dictionary["rooms"] as? [String] ?? [""]
         let gender = dictionary["gender"] as? Gender ?? .unknown
         let numberPhone = dictionary["phoneNumber"] as? String ?? ""
-
         
         let senderType: SenderType = uid == currentUser?.uid ? .send : .receive
         
-        let user = User(userName: userName, image: image, email: email, uid: uid, senderType: senderType, gender: gender, roomArray: roomArray, numberPhone: numberPhone)
+        let user = User(userName: userName, image: image, email: email,
+                        uid: uid, senderType: senderType, gender: gender,
+                        roomArray: roomArray, numberPhone: numberPhone)
         
         return user
     }

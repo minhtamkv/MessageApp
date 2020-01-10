@@ -48,11 +48,13 @@ class UserRepository {
     
     func registData(user: String, password: String, uid: String, fullname: String) {
         let dataUser = User.registData(email: user, password: password, uid: uid, userName: fullname)
-        self.database.collection(FirebaseConstants.users).document(uid).setData(dataUser) { err in
-            if err == nil {
+        self.database
+            .collection(FirebaseConstants.users)
+            .document(uid).setData(dataUser) { [weak self] error in
+            if error == nil {
                 print("Set data for \(uid) success")
             } else {
-                print("Error : \(err?.localizedDescription)")
+                print("Error : \(error?.localizedDescription)")
             }
         }
     }
@@ -69,18 +71,18 @@ class UserRepository {
             database
                 .collection(FirebaseConstants.users)
                 .document(currentUser.uid)
-                .getDocument { querySnapshot, err -> Void in
-                if let err = err {
-                print("Error getting documents: \(err)")
+                .getDocument { querySnapshot, error -> Void in
+                if let err = error {
+                print("Error getting documents: \(error)")
                 } else {
                     if let snapshot = querySnapshot {
                         if let dataCurrentUser = snapshot.data() {
                             let user = User.map(uid: currentUser.uid, dictionary: dataCurrentUser)
-                            completion(user, err)
+                            completion(user, error)
                         }
                     }
                 }
-            })
+            }
         }
     }
     

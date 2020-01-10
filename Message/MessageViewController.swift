@@ -30,7 +30,6 @@ final class MessageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
-
     }
     
     func configTableView() {
