@@ -72,14 +72,12 @@ class UserRepository {
                 .collection(FirebaseConstants.users)
                 .document(currentUser.uid)
                 .getDocument { [weak self] querySnapshot, error -> Void in
-                if let err = error {
+                if let error = error {
                 print("Error getting documents: \(error)")
                 } else {
-                    if let snapshot = querySnapshot {
-                        if let dataCurrentUser = snapshot.data() {
+                    if let snapshot = querySnapshot, let dataCurrentUser = snapshot.data()  {
                             let user = User.map(uid: currentUser.uid, dictionary: dataCurrentUser)
                             completion(user, error)
-                        }
                     }
                 }
             }
