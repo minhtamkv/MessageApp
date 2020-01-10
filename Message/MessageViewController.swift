@@ -13,14 +13,13 @@ import Reusable
 
 private enum Constants {
     static let numberOfSections = 1
-    static let nilString = ""
 }
 
-class MessageViewController: UIViewController {
+final class MessageViewController: UIViewController {
         
     @IBOutlet private weak var nameGroupLabel: UILabel!
-    @IBOutlet weak var mesasgeTableView: UITableView!
-    @IBOutlet weak var inputTextField: UITextView!
+    @IBOutlet private weak var mesasgeTableView: UITableView!
+    @IBOutlet private weak var inputTextField: UITextView!
     
     var idRoom: String?
     var groupName: String = ""
@@ -46,10 +45,15 @@ class MessageViewController: UIViewController {
     }
 
     @IBAction func handleSendButton(_ sender: UIButton) {
+    
     }
+    
     @IBAction func handleAttackButton(_ sender: UIButton) {
+    
     }
+    
     @IBAction func handleBackButton(_ sender: UIButton) {
+    
     }
     
 }

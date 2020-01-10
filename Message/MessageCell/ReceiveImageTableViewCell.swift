@@ -9,7 +9,7 @@
 import UIKit
 import Reusable
 
-class ReceiveImageTableViewCell: UITableViewCell, Reusable {
+final class ReceiveImageTableViewCell: UITableViewCell, Reusable {
 
     override func awakeFromNib() {
         super.awakeFromNib()

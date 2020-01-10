@@ -9,7 +9,7 @@
 import UIKit
 import Reusable
 
-class SendTextTableViewCell: UITableViewCell, Reusable {
+final class SendTextTableViewCell: UITableViewCell, Reusable {
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -80,8 +80,8 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
             let room = searchRooms[indexPath.row]
             $0.setupCell(data: room)
             self.messages = []
-            roomRepository.getInfoOfRoom(room: room) { result, error in
-                self.messages.append(result ?? Message(idMessage: "", content: "", uidRoom: "", image: "", timeSend: 0, uidUser: "", height: 0, width: 0))
+            roomRepository.getInfoOfRoom(room: room) { [weak self] result, error in
+                self?.messages.append(result ?? Message(idMessage: "", content: "", uidRoom: "", image: "", timeSend: 0, uidUser: "", height: 0, width: 0))
             }
         }
         return cell

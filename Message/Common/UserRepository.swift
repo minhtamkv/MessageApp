@@ -66,7 +66,10 @@ class UserRepository {
     
     func fetchCurrentUser(completion: @escaping ((User?, Error?) -> Void)) {
         if let currentUser = self.currentUser {
-            database.collection("users").document(currentUser.uid).getDocument(completion: { querySnapshot, err -> Void in
+            database
+                .collection(FirebaseConstants.users)
+                .document(currentUser.uid)
+                .getDocument { querySnapshot, err -> Void in
                 if let err = err {
                 print("Error getting documents: \(err)")
                 } else {
@@ -95,25 +98,25 @@ class UserRepository {
         metaData.contentType = "image/jpeg"
         
         let storageRef = Storage.storage().reference()
-        guard let `currentUser` = self.currentUser else { return }
+        guard let currentUser = self.currentUser else { return }
         let reference = storageRef.child("\(filePath)/\(currentUser.uid).jpeg")
         reference.putData(dataImage, metadata: metaData) { metaData, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
             } else {
-                reference.downloadURL(completion: { (url, error) in
+                reference.downloadURL { [weak self] url, error in
                     if let error = error {
                         print(error.localizedDescription)
                         return
                     } else {
-                        guard let `currentUser` = self.currentUser else { return }
-                        guard let `url` = url else { return }
-                        self.database.collection(FirebaseConstants.users)
+                        guard let currentUser = self?.currentUser else { return }
+                        guard let url = url else { return }
+                        self?.database.collection(FirebaseConstants.users)
                             .document(currentUser.uid)
                             .setData(["image" : "\(url.absoluteString)"], merge: true)
                     }
-                })
+                }
             }
         }
     }

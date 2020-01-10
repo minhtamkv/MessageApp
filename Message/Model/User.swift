@@ -12,13 +12,13 @@ import FirebaseAuth
 enum SenderType {
     case send
     case receive
-    case unknow
+    case unknown
 }
 
 enum Gender: String {
     case male = "Nam"
     case female = "Nữ"
-    case unknow = "Không xác định"
+    case unknown = "Không xác định"
 }
 
 struct User {
@@ -27,8 +27,8 @@ struct User {
     var password: String = ""
     var userName: String = ""
     var birthday: Date?
-    var gender: Gender = .unknow
-    var senderType: SenderType = .unknow
+    var gender: Gender = .unknown
+    var senderType: SenderType = .unknown
     var image: String = ""
     var roomArray: [String] = [""]
     var isSelected: Bool = false
@@ -51,7 +51,7 @@ struct User {
         let email = dictionary["email"] as? String ?? ""
         let image = dictionary["image"] as? String ?? ""
         let roomArray = dictionary["arrRoom"] as? [String] ?? [""]
-        let gender = dictionary["gender"] as? Gender ?? .unknow
+        let gender = dictionary["gender"] as? Gender ?? .unknown
         let numberPhone = dictionary["phoneNumber"] as? String ?? ""
 
         

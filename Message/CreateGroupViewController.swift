@@ -9,20 +9,14 @@
 import UIKit
 import Firebase
 
-private enum Constants {
-    static let nilString = ""
-}
+final class CreateGroupViewController: UIViewController {
 
-class CreateGroupViewController: UIViewController {
-
-    @IBOutlet weak var groupNameTextField: UITextField!
+    @IBOutlet private weak var groupNameTextField: UITextField!
     
     private let database = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func handleBack(_ sender: UIButton) {
@@ -31,10 +25,10 @@ class CreateGroupViewController: UIViewController {
     
     @IBAction func handleCreateGroup(_ sender: UIButton) {
         guard let groupName = groupNameTextField.text else { return }
-        if groupName == Constants.nilString {
+        if groupName.isEmpty {
             self.showAlert(message: "Tên nhóm chat không được để trống", title: "Thông báo")
         }
-        let chooseMemberViewController = ChooseMembersViewController()
+        let chooseMemberViewController = ChooseMembersViewController(nibName: "ChooseMembersViewController", bundle: nil)
         self.groupNameTextField.text = chooseMemberViewController.groupName
     }
 

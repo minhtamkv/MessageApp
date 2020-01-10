@@ -19,10 +19,7 @@ class ChooseMemberTableViewCell: UITableViewCell, Reusable {
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var chooseButton: UIButton!
-    
-    var indexPath: IndexPath?
-    var user: User?
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,11 +33,8 @@ class ChooseMemberTableViewCell: UITableViewCell, Reusable {
     
     func setupCell(data: User) {
         userNameLabel?.text = "\(data.userName)"
-        getImageUserFromUrl(with: data.image)
-    }
-    
-    private func getImageUserFromUrl(with url: String) {
-        let url = URL(string: url)
+        let url = URL(string: data.image)
         self.userImageView.sd_setImage(with: url, completed: nil)
+        
     }
 }

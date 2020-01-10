@@ -9,7 +9,7 @@
 import UIKit
 import Reusable
 
-class ReceiveTextTableViewCell: UITableViewCell, Reusable {
+final class ReceiveTextTableViewCell: UITableViewCell, Reusable {
 
     override func awakeFromNib() {
         super.awakeFromNib()

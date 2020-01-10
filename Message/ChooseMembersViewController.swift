@@ -16,7 +16,7 @@ private enum Constants {
     static let heightForRows: CGFloat = 60
 }
 
-class ChooseMembersViewController: UIViewController {
+final class ChooseMembersViewController: UIViewController {
     
     @IBOutlet private weak var searchMembers: UISearchBar!
     @IBOutlet private weak var listContacts: UITableView!
@@ -29,7 +29,7 @@ class ChooseMembersViewController: UIViewController {
     private var userRepository = UserRepository()
     
     var groupName: String?
-    var selectUserArray = [String]()
+    private var selectUserArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +47,12 @@ class ChooseMembersViewController: UIViewController {
         
     @IBAction func handleBack(_ sender: UIButton) {
         self.dismiss(animated: false)
-
     }
     
     @IBAction func handleDone(_ sender: UIButton) {
         guard let currentUser = currentUser, let groupName = groupName else { return }
-        self.selectUserArray.append(currentUser.uid)
-        let time: NSNumber = NSNumber(value: Int(NSDate().timeIntervalSince1970))
+        selectUserArray.append(currentUser.uid)
+        let time = NSNumber(value: Int(NSDate().timeIntervalSince1970))
         roomRepository.updateFirebase(groupName: groupName, time: time, selectUserArray: selectUserArray)
     }
     
@@ -64,8 +63,7 @@ extension ChooseMembersViewController: UISearchBarDelegate {
         if searchText.isEmpty {
             searchUser = userArray
         } else {
-            searchUser = userArray.filter { $0.userName.lowercased().contains(searchText.lowercased())
-            }
+            searchUser = userArray.filter { $0.userName.lowercased().contains(searchText.lowercased()) }
         }
         listContacts.reloadData()
     }
@@ -85,7 +83,6 @@ extension ChooseMembersViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = listContacts.dequeueReusableCell(for: indexPath, cellType: ChooseMemberTableViewCell.self).then {
             let user = searchUser[indexPath.row]
             $0.setupCell(data: user)
-            $0.user = user
         }
         return cell
        }

@@ -9,7 +9,12 @@ import UIKit
 import Firebase
 import SDWebImage
 
-class ProfileViewController: UIViewController {
+enum OpenSourceFile {
+    case camera
+    case gallary
+}
+
+final class ProfileViewController: UIViewController {
     
     @IBOutlet private weak var maleButton: UIButton!
     @IBOutlet private weak var femaleButton: UIButton!
@@ -41,48 +46,49 @@ class ProfileViewController: UIViewController {
     }
     
     func configView() {
-        self.dateOfBirthTextField.isUserInteractionEnabled = false
-        self.numberPhoneTextField.isUserInteractionEnabled = false
+        dateOfBirthTextField.isUserInteractionEnabled = false
+        numberPhoneTextField.isUserInteractionEnabled = false
         
         picker.delegate = self
     }
     
     func configAlert() {
-        alert.addAction(UIAlertAction(title: "Máy ảnh", style: .default, handler: { _ in
-            self.openCamera()
-        }))
+        alert.addAction(UIAlertAction(title: "Máy ảnh", style: .default) { [weak self] _ in
+            self?.openFile(openSourceFile: OpenSourceFile.camera)
+        })
         
-        alert.addAction(UIAlertAction(title: "Thư viện", style: .default, handler: { _ in
-            self.openGallary()
-        }))
+        alert.addAction(UIAlertAction(title: "Thư viện", style: .default) { [weak self] _ in
+            self?.openFile(openSourceFile: OpenSourceFile.gallary)
+        })
 
         alert.addAction(UIAlertAction.init(title: "Huỷ", style: .cancel, handler: nil))
     }
     
-    func openCamera(){
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
-            picker.sourceType = .camera
-            self.present(picker, animated: true, completion: nil)
-        } else {
-            showAlert(message: "Máy ảnh không khả dụng", title: "Đồng ý")
-        }
-    }
-    
-    func openGallary(){
-        if(UIImagePickerController .isSourceTypeAvailable(.photoLibrary)){
-            picker.sourceType = .photoLibrary
-            self.present(picker, animated: true, completion: nil)
-        } else {
-            showAlert(message: "Thư viện không khả dụng", title: "Đồng ý")
-        }
-    }
-    
-    func fetchUser() {
-        userRepository.fetchCurrentUser() { result, error in
-            if error != nil {
-                self.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
+    func openFile(openSourceFile: OpenSourceFile){
+        switch openSourceFile {
+        case .camera:
+            if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+                picker.sourceType = .camera
+                self.present(picker, animated: true, completion: nil)
             } else {
-                self.setupProfileView(user: result ?? User(userName: "", image: "", email: "", uid: "", senderType: .unknow, gender: .unknow, roomArray: [""], numberPhone: ""))
+                showAlert(message: "Thư viện không khả dụng", title: "Đồng ý")
+            }
+        case .gallary:
+            if(UIImagePickerController .isSourceTypeAvailable(.photoLibrary)){
+                picker.sourceType = .photoLibrary
+                self.present(picker, animated: true, completion: nil)
+            } else {
+                showAlert(message: "Thư viện không khả dụng", title: "Đồng ý")
+            }
+        }
+    }
+        
+    func fetchUser() {
+        userRepository.fetchCurrentUser() { [weak self] result, error in
+            if error != nil {
+                self?.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
+            } else {
+                self?.setupProfileView(user: result ?? User(userName: "", image: "", email: "", uid: "", senderType: .unknown, gender: .unknown, roomArray: [""], numberPhone: ""))
             }
         }
     }

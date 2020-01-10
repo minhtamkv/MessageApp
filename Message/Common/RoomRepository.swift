@@ -16,6 +16,7 @@ private enum FirebaseConstant {
     static let room = "room"
     static let users = "users"
     static let uid = "uid"
+    static let time = "time"
 }
 
 class RoomRepository {
@@ -52,7 +53,7 @@ class RoomRepository {
     func getRooms(completion: @escaping ((Room?, Error?) -> Void)) {
         DispatchQueue.global().async {
             let getRoom = self.database.collection(FirebaseConstant.room)
-            getRoom.order(by: "time", descending: true)
+            getRoom.order(by: FirebaseConstant.time, descending: true)
             DispatchQueue.main.async {
                 getRoom.addSnapshotListener { querySnapshot, err in
                     if let err = err {
