@@ -89,7 +89,7 @@ class RoomRepository {
         
         let referenceRoom = self.database
             .collection(FirebaseConstant.room)
-            .addDocument(data: dataRoom) { error in
+            .addDocument(data: dataRoom) { [weak self] error in
             if error == nil {
                 print("Set data success")
             } else {

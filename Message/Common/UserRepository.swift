@@ -23,17 +23,17 @@ class UserRepository {
     private let currentUser = Auth.auth().currentUser
     
     func login (user: String, password: String, completion: @escaping ((String?, Error?) -> Void)) {
-        FireStoreManager.shared.login(user: user, password: password) { result ,error -> Void in
+        FireStoreManager.shared.login(user: user, password: password) { [weak self] result ,error -> Void in
             if error != nil {
                 completion("Error", error)
             } else {
                 completion(result, error)
-                self.saveLogin(username: user, password: password)
+                self?.saveLogin(username: user, password: password)
             }
         }
     }
     
-    func register (user: String, password: String, fullname: String, completion: @escaping ((AuthDataResult?, Error?) -> Void)) {        FireStoreManager.shared.register(user: user, password: password) { result, error -> Void in
+    func register (user: String, password: String, fullname: String, completion: @escaping ((AuthDataResult?, Error?) -> Void)) {        FireStoreManager.shared.register(user: user, password: password) { [weak self] result, error -> Void in
             if error != nil {
                 guard let uid = result?.user.uid else {
                     print("Not user registed")
@@ -41,7 +41,7 @@ class UserRepository {
                 }
             } else {
                 completion(result, error)
-                self.registData(user: user, password: password, uid: result?.user.uid ?? "", fullname: fullname)
+                self?.registData(user: user, password: password, uid: result?.user.uid ?? "", fullname: fullname)
             }
         }
     }
@@ -71,7 +71,7 @@ class UserRepository {
             database
                 .collection(FirebaseConstants.users)
                 .document(currentUser.uid)
-                .getDocument { querySnapshot, error -> Void in
+                .getDocument { [weak self] querySnapshot, error -> Void in
                 if let err = error {
                 print("Error getting documents: \(error)")
                 } else {
@@ -102,7 +102,7 @@ class UserRepository {
         let storageRef = Storage.storage().reference()
         guard let currentUser = self.currentUser else { return }
         let reference = storageRef.child("\(filePath)/\(currentUser.uid).jpeg")
-        reference.putData(dataImage, metadata: metaData) { metaData, error in
+        reference.putData(dataImage, metadata: metaData) { [weak self] metaData, error in
             if let error = error {
                 print(error.localizedDescription)
                 return

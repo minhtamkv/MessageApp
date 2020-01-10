@@ -44,7 +44,7 @@ final class RegisterViewController: UIViewController {
         
         switch resultEmail {
         case .valid:
-            userRepository.register(user: username, password: password, fullname: fullname) { result, error in
+            userRepository.register(user: username, password: password, fullname: fullname) { [weak self] result, error in
                 guard let error = error else { return }
                 print("\(error)")
             }
@@ -55,7 +55,7 @@ final class RegisterViewController: UIViewController {
         
         switch resultPassword {
         case .valid:
-            userRepository.register(user: username, password: password, fullname: fullname) { result, error in
+            userRepository.register(user: username, password: password, fullname: fullname) { [weak self] result, error in
                 guard let error = error else { return }
                 print("\(error)")
             }
@@ -66,7 +66,7 @@ final class RegisterViewController: UIViewController {
         
         switch validatePassword {
         case true:
-            userRepository.register(user: username, password: password, fullname: fullname) { result, error in
+            userRepository.register(user: username, password: password, fullname: fullname) { [weak self] result, error in
                 guard let error = error else { return }
                 print("\(error)")
             }
