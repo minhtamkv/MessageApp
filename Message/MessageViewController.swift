@@ -42,19 +42,6 @@ final class MessageViewController: UIViewController {
             $0.dataSource = self
         }
     }
-
-    @IBAction func handleSendButton(_ sender: UIButton) {
-    
-    }
-    
-    @IBAction func handleAttackButton(_ sender: UIButton) {
-    
-    }
-    
-    @IBAction func handleBackButton(_ sender: UIButton) {
-    
-    }
-    
 }
 
 extension MessageViewController: UITableViewDelegate, UITableViewDataSource {
