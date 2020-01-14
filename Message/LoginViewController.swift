@@ -45,10 +45,10 @@ final class LoginViewController: UIViewController {
 
         switch resultEmail {
         case .valid:
-            userRepository.login(user: username, password: password) { _, error in
+            userRepository.login(user: username, password: password) { [weak self] _, error in
                 if error != nil {
-                    self.stopIndicator()
-                    self.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
+                    self?.stopIndicator()
+                    self?.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
                 }
             }
             self.loginAccess()
@@ -58,10 +58,10 @@ final class LoginViewController: UIViewController {
         
         switch resultPass {
         case .valid:
-            userRepository.login(user: username, password: password) { _, error in
+            userRepository.login(user: username, password: password) { [weak self] _, error in
                 if error != nil {
-                    self.stopIndicator()
-                    self.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
+                    self?.stopIndicator()
+                    self?.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
                 }
             }
             self.loginAccess()
@@ -89,9 +89,8 @@ final class LoginViewController: UIViewController {
             $0.subtype = CATransitionSubtype.fromRight
             $0.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         }
-        view.window?.layer.add(transition, forKey: kCATransition)
-        self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
+    
     func startIndicator() {
         indicator.isHidden = false
         indicator.startAnimating()
@@ -101,9 +100,5 @@ final class LoginViewController: UIViewController {
         indicator.isHidden = true
         indicator.stopAnimating()
     }
-}
-
-extension LoginViewController: StoryboardSceneBased {
-    static let sceneStoryboard = UIStoryboard(name: "CustomVC", bundle: nil)
 }
 

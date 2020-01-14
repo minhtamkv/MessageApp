@@ -15,15 +15,15 @@ struct Room {
     var time: NSNumber = 0
     var uidMember: [String] = [""]
     var admins: [String] = [""]
-    
-    init(image: String, nameGroup: String, time: NSNumber, admins: [String], members: [String], idRoom: String) {
-        self.image = image
-        self.nameGroup = nameGroup
-        self.time = time
-        self.admins = admins
-        self.uidMember = members
-        self.idRoom = idRoom
-    }
+//
+//    init(image: String, nameGroup: String, time: NSNumber, admins: [String], members: [String], idRoom: String) {
+//        self.image = image
+//        self.nameGroup = nameGroup
+//        self.time = time
+//        self.admins = admins
+//        self.uidMember = members
+//        self.idRoom = idRoom
+//    }
     
     static func map(idRoom: String, dictionary: [String: Any]) -> Room {
         let members = dictionary["uidMember"] as? [String] ?? [""]
@@ -32,7 +32,17 @@ struct Room {
         let time = dictionary["time"] as? NSNumber ?? 0
         let admins = dictionary["arrAdmin"] as? [String] ?? [""]
         
-        let room = Room(image: image, nameGroup: nameGroup, time: time, admins: admins, members: members, idRoom: idRoom)
+        let room = Room(nameGroup: nameGroup, idRoom: idRoom, image: image, time: time, uidMember: members, admins: admins)
         return room
+    }
+    
+    static func addDataRoom(groupName: String, time: NSNumber, selectUserArray: [String]) -> [String : Any] {
+        let dataRoom : [String : Any] = [
+            "nameRoom" : groupName,
+            "time" : time,
+            "uidMember" : selectUserArray,
+            "image" : "",
+        ]
+        return dataRoom
     }
 }

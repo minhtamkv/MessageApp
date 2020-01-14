@@ -26,17 +26,18 @@ class GroupViewController: UIViewController, StoryboardBased {
     private let currentUser = Auth.auth().currentUser
     private let database = Firestore.firestore()
     private var rooms = [Room]()
+    private var messages = [Message]()
     
     private let roomRepository = RoomRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configListTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        roomRepository.getRooms()
+        getRoom()
         groupTableView.reloadData()
     }
     
@@ -48,7 +49,12 @@ class GroupViewController: UIViewController, StoryboardBased {
         }
     }
     
-    @IBAction func profileTapped(_ sender: UIButton) {
+    func getRoom() {
+        rooms = [Room]()
+        roomRepository.getRooms() { [weak self] result, error in
+            self?.rooms.append(result ?? Room(nameGroup: "", idRoom: "", image: "", time: 0, uidMember: [""], admins: [""]))
+        }
+        searchRooms = rooms
     }
     
     @IBAction func contactTapped(_ sender: UIButton) {
@@ -73,9 +79,21 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = groupTableView.dequeueReusableCell(for: indexPath, cellType: GroupTableViewCell.self).then {
             let room = searchRooms[indexPath.row]
             $0.setupCell(data: room)
-            roomRepository.getInfoOfRoom(room: room)
+            self.messages = []
+            roomRepository.getInfoOfRoom(room: room) { [weak self] result, error in
+                self?.messages.append(result ?? Message(idMessage: "", content: "", uidRoom: "", image: "", timeSend: 0, uidUser: "", height: 0, width: 0))
+            }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let room = searchRooms[indexPath.row]
+        let idRoom = room.idRoom
+        let messageViewController = MessageViewController(nibName: "MessageViewController", bundle: nil)
+        messageViewController.groupName = room.nameGroup
+        messageViewController.idRoom = idRoom
+        self.present(messageViewController, animated: false, completion: nil)
     }
 }
 
