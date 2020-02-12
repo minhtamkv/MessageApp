@@ -18,13 +18,14 @@ private enum CheckCharater {
 
 final class LoginViewController: UIViewController {
 
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var checkLoginButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    let defaults = UserDefaults.standard
-    let userRepository = UserRepository()
+    private let defaults = UserDefaults.standard
+    private let userRepository = UserRepository()
+    private var vatidateSuccessEmail = false
+    private var validateSuccessPassword = false
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,6 @@ final class LoginViewController: UIViewController {
     }
     
     func configViews() {
-        indicator.isHidden = true
     }
     
     @IBAction func handleLoginButton(_ sender: UIButton) {
@@ -45,40 +45,35 @@ final class LoginViewController: UIViewController {
 
         switch resultEmail {
         case .valid:
-            userRepository.login(user: username, password: password) { [weak self] _, error in
-                if error != nil {
-                    self?.stopIndicator()
-                    self?.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
-                }
-            }
-            self.loginAccess()
+            vatidateSuccessEmail = true
         case .invalid:
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
         }
         
         switch resultPass {
         case .valid:
+            validateSuccessPassword = true
+        case .invalid:
+            self.showAlert(message: "Vui lòng điền Mật khẩu", title: "Đồng ý")
+        }
+        
+        if validateSuccessPassword == true && vatidateSuccessEmail == true {
             userRepository.login(user: username, password: password) { [weak self] _, error in
                 if error != nil {
                     self?.stopIndicator()
                     self?.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
+                } else {
+                    self?.loginAccess()
                 }
             }
-            self.loginAccess()
-        case .invalid:
-            self.showAlert(message: "Vui lòng điền Mật khẩu", title: "Đồng ý")
+            
         }
     }
     
     func loginAccess() {
-        let transition = CATransition().then {
-            $0.duration = 0.5
-            $0.type = CATransitionType.push
-            $0.subtype = CATransitionSubtype.fromLeft
-            $0.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        }
-        self.view.window?.layer.add(transition, forKey: kCATransition)
-        self.presentingViewController?.dismiss(animated: false, completion: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let groupViewController: UIViewController = storyboard.instantiateViewController(withIdentifier: "GroupViewController") as UIViewController
+        self.present(groupViewController, animated: true, completion: nil)
     }
     
     

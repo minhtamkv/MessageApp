@@ -9,8 +9,9 @@
 import UIKit
 import Reusable
 
-final class SendImageTableViewCell: UITableViewCell, Reusable {
-
+final class SendImageTableViewCell: UITableViewCell, NibReusable {
+    @IBOutlet weak var sendImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,6 +21,12 @@ final class SendImageTableViewCell: UITableViewCell, Reusable {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setupCell(data: Message) {
+        self.sendImageView.frame.size = CGSize(width: data.height, height: data.width)
+        let url = URL(string: data.image)
+        sendImageView.sd_setImage(with: url, completed: nil)
     }
     
 }

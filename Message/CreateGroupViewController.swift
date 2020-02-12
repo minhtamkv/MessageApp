@@ -19,6 +19,12 @@ final class CreateGroupViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let chooseMembersViewController = segue.destination as? ChooseMembersViewController
+        chooseMembersViewController?.groupName = self.groupNameTextField.text
+    }
+    
+    
     @IBAction func handleBack(_ sender: UIButton) {
         dismiss(animated: false)
     }
@@ -28,8 +34,6 @@ final class CreateGroupViewController: UIViewController {
         if groupName.isEmpty {
             self.showAlert(message: "Tên nhóm chat không được để trống", title: "Thông báo")
         }
-        let chooseMemberViewController = ChooseMembersViewController(nibName: "ChooseMembersViewController", bundle: nil)
-        self.groupNameTextField.text = chooseMemberViewController.groupName
+        self.performSegue(withIdentifier: "ChooseMembersViewController", sender: self)
     }
-
 }

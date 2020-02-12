@@ -9,8 +9,9 @@
 import UIKit
 import Reusable
 
-final class ReceiveTextTableViewCell: UITableViewCell, Reusable {
+final class ReceiveTextTableViewCell: UITableViewCell, NibReusable {
 
+    @IBOutlet weak var contentMessageLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,6 +21,10 @@ final class ReceiveTextTableViewCell: UITableViewCell, Reusable {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setupCell(data: Message) {
+        contentMessageLabel?.text = "\(data.content)"
     }
     
 }

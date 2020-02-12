@@ -9,8 +9,9 @@
 import UIKit
 import Reusable
 
-final class SendTextTableViewCell: UITableViewCell, Reusable {
-
+final class SendTextTableViewCell: UITableViewCell, NibReusable {
+    
+    @IBOutlet weak var sendContentLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,6 +21,10 @@ final class SendTextTableViewCell: UITableViewCell, Reusable {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setupCell(data: Message) {
+        sendContentLabel?.text = "\(data.content)"
     }
     
 }

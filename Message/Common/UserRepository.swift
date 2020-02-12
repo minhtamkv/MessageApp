@@ -22,26 +22,20 @@ class UserRepository {
     private let database = Firestore.firestore()
     private let currentUser = Auth.auth().currentUser
     
-    func login (user: String, password: String, completion: @escaping ((String?, Error?) -> Void)) {
-        FireStoreManager.shared.login(user: user, password: password) { [weak self] result ,error -> Void in
-            if error != nil {
-                completion("Error", error)
-            } else {
-                completion(result, error)
-                self?.saveLogin(username: user, password: password)
-            }
+    func login (user : String , password : String , completion : @escaping (String?, Error?) -> Void) {
+        Auth.auth().signIn(withEmail: user, password: password) { [weak self] result, error -> Void in
+            completion(result?.user.uid, error)
         }
     }
     
-    func register (user: String, password: String, fullname: String, completion: @escaping ((AuthDataResult?, Error?) -> Void)) {        FireStoreManager.shared.register(user: user, password: password) { [weak self] result, error -> Void in
-            if error != nil {
-                guard let uid = result?.user.uid else {
-                    print("Not user registed")
-                    return
-                }
+    func register (user : String , password : String , fullname: String , completion : @escaping (AuthDataResult?, Error?) -> Void) {
+        Auth.auth().createUser(withEmail: user, password: password) { [weak self] result, error -> Void in
+            if error == nil {
+                completion(result, nil)
+                self?.registData(user: user, password: password, uid: result?.user.uid ?? "", fullname: "")
             } else {
-                completion(result, error)
-                self?.registData(user: user, password: password, uid: result?.user.uid ?? "", fullname: fullname)
+                completion(nil, error)
+                print("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
             }
         }
     }
@@ -121,4 +115,24 @@ class UserRepository {
         }
     }
     
+    public func fetchUser() {
+        database.collection(FirebaseConstants.users).getDocuments(){ [weak self] querySnapshot, err in
+               if let err = err {
+                   print("Error getting documents: \(err)")
+               } else {
+                   if let snapshot = querySnapshot {
+                       for document in snapshot.documents {
+                           let data = document.data()
+                           let uid = data["uid"] as? String ?? ""
+                        if uid != self?.currentUser?.uid {
+                               let newUser = User.map(uid: uid, dictionary: data)
+                            ChooseMembersViewController().users.append(newUser)
+                           }
+                       }
+                   }
+                ChooseMembersViewController().searchUser = ChooseMembersViewController().users
+//                   self.tableView.reloadData()
+               }
+           }
+       }
 }

@@ -18,13 +18,13 @@ final class ProfileViewController: UIViewController {
     
     @IBOutlet private weak var maleButton: UIButton!
     @IBOutlet private weak var femaleButton: UIButton!
-    @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet private weak var dateOfBirthTextField: UITextField!
     @IBOutlet private weak var numberPhoneTextField: UITextField!
     @IBOutlet private weak var emailLabel: UILabel!
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var editButton: UIButton!
+    @IBOutlet weak var avatarImageView: UIImageView!
     
     private var currentPhone = ""
     private var currentDate = ""

@@ -15,6 +15,7 @@ import Reusable
 
 private struct Constants {
     let inputEmpty = 1
+    let numberOfValidate = 3
 }
 
 final class RegisterViewController: UIViewController {    
@@ -24,8 +25,12 @@ final class RegisterViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var confirmPasswordTextField: UITextField!
     
-    let database = Firestore.firestore()
-    let userRepository = UserRepository()
+    private let database = Firestore.firestore()
+    private let userRepository = UserRepository()
+    private var validateSuccessEmail = false
+    private var validateSuccessPassword = false
+    private var validateConfirmPassword = false
+    
            
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,35 +49,30 @@ final class RegisterViewController: UIViewController {
         
         switch resultEmail {
         case .valid:
-            userRepository.register(user: username, password: password, fullname: fullname) { [weak self] result, error in
-                guard let error = error else { return }
-                print("\(error)")
-            }
-            self.dismiss(animated: false, completion: nil)
+            validateSuccessEmail = true
         case .invalid:
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
         }
         
         switch resultPassword {
         case .valid:
-            userRepository.register(user: username, password: password, fullname: fullname) { [weak self] result, error in
-                guard let error = error else { return }
-                print("\(error)")
-            }
-            self.dismiss(animated: false, completion: nil)
+            validateSuccessPassword = true
         case .invalid:
             self.showAlert(message: "Vui lòng điền Email", title: "Đồng ý")
         }
         
         switch validatePassword {
         case true:
+            validateConfirmPassword = true
+        case false:
+            self.showAlert(message: "Mật khẩu không xác định", title: "Đồng ý")
+        }
+        
+        if validateSuccessEmail == true && validateSuccessPassword == true && validateConfirmPassword == true {
             userRepository.register(user: username, password: password, fullname: fullname) { [weak self] result, error in
                 guard let error = error else { return }
                 print("\(error)")
             }
-            self.dismiss(animated: false, completion: nil)
-        case false:
-            self.showAlert(message: "Mật khẩu không xác định", title: "Đồng ý")
         }
     }
     @IBAction func handleBack(_ sender: UIButton) {

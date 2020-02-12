@@ -50,16 +50,15 @@ class RoomRepository {
         }
     }
     
-    func getRooms(completion: @escaping ((Room?, Error?) -> Void)) {
-        DispatchQueue.global().async {
+    func getRooms(completion: @escaping (([Room]?, Error?) -> Void)) {
             let getRoom = self.database.collection(FirebaseConstant.room)
             getRoom.order(by: FirebaseConstant.time, descending: true)
-            DispatchQueue.main.async {
-                getRoom.addSnapshotListener { [weak self] querySnapshot, error in
+            getRoom.addSnapshotListener { [weak self] querySnapshot, error in
                     if let error = error {
                         print("Error getting documents: \(error)")
                     } else {
                         if let snapshot = querySnapshot {
+                            var rooms = [Room]()
                             for ducument in snapshot.documents {
                                 let idRoom = ducument.documentID
                                 let dataRooms = ducument.data()
@@ -68,15 +67,14 @@ class RoomRepository {
                                 for value in uidMember {
                                     if value == currentUser.uid {
                                         let newRoom = Room.map(idRoom: idRoom, dictionary: dataRooms)
-                                        completion(newRoom, error)
+                                        rooms.append(newRoom)
                                     }
                                 }
                             }
+                            completion(rooms, error)
                         }
                     }
-                }
             }
-        }
     }
     
     func updateFirebase(groupName: String, time: NSNumber, selectUserArray: [String]) {
@@ -84,7 +82,6 @@ class RoomRepository {
         
         // Update Room data to Firebase: Update new information of this new Room
         
-        let time: NSNumber = NSNumber(value: Int(NSDate().timeIntervalSince1970))
         let dataRoom = Room.addDataRoom(groupName: groupName, time: time, selectUserArray: selectUserArray)
         
         let referenceRoom = self.database

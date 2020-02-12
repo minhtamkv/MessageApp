@@ -15,15 +15,6 @@ struct Room {
     var time: NSNumber = 0
     var uidMember: [String] = [""]
     var admins: [String] = [""]
-//
-//    init(image: String, nameGroup: String, time: NSNumber, admins: [String], members: [String], idRoom: String) {
-//        self.image = image
-//        self.nameGroup = nameGroup
-//        self.time = time
-//        self.admins = admins
-//        self.uidMember = members
-//        self.idRoom = idRoom
-//    }
     
     static func map(idRoom: String, dictionary: [String: Any]) -> Room {
         let members = dictionary["uidMember"] as? [String] ?? [""]

@@ -18,7 +18,7 @@
 		880FA61E237417420086F172 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA61D237417420086F172 /* UITableViewExtensions.swift */; };
 		880FA622237417D70086F172 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880FA621237417D70086F172 /* Global.swift */; };
 		882C06052398B05A00ED3B3E /* CustomValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C06042398B05A00ED3B3E /* CustomValidationError.swift */; };
-		88491E1A238E6EFD00DB2056 /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E19238E6EFD00DB2056 /* FireStoreManager.swift */; };
+		8833FF0523CF061900F59487 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8833FF0423CF061900F59487 /* GoogleService-Info.plist */; };
 		88491E1C238E776400DB2056 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E1B238E776400DB2056 /* UIViewController+.swift */; };
 		88491E1E238E79F600DB2056 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88491E1D238E79F600DB2056 /* UserRepository.swift */; };
 		88682F8F23978C0A00EBDFEF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88682F8E23978C0A00EBDFEF /* Person.swift */; };
@@ -35,6 +35,7 @@
 		889B2BCC23C7E57800E31F9B /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B2BCB23C7E57800E31F9B /* MessageViewController.swift */; };
 		889E334923C5E53E007058A3 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E334823C5E53E007058A3 /* GroupViewController.swift */; };
 		88A0A5AF23C7A065007E7DB5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0A5AE23C7A065007E7DB5 /* ProfileViewController.swift */; };
+		88B5174223F3AEE200995E57 /* MessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5174123F3AEE200995E57 /* MessageRepository.swift */; };
 		88B6E39223C710A0007C8CC0 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6E39123C710A0007C8CC0 /* CreateGroupViewController.swift */; };
 		88B6E39423C713D9007C8CC0 /* ChooseMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6E39323C713D9007C8CC0 /* ChooseMembersViewController.swift */; };
 		88B6E39823C71821007C8CC0 /* ChooseMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6E39623C71821007C8CC0 /* ChooseMemberTableViewCell.swift */; };
@@ -89,7 +90,7 @@
 		880FA61D237417420086F172 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		880FA621237417D70086F172 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		882C06042398B05A00ED3B3E /* CustomValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomValidationError.swift; sourceTree = "<group>"; };
-		88491E19238E6EFD00DB2056 /* FireStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
+		8833FF0423CF061900F59487 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88491E1B238E776400DB2056 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		88491E1D238E79F600DB2056 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		88682F8E23978C0A00EBDFEF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 		889B2BCB23C7E57800E31F9B /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		889E334823C5E53E007058A3 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		88A0A5AE23C7A065007E7DB5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		88B5174123F3AEE200995E57 /* MessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepository.swift; sourceTree = "<group>"; };
 		88B6E39123C710A0007C8CC0 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		88B6E39323C713D9007C8CC0 /* ChooseMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMembersViewController.swift; sourceTree = "<group>"; };
 		88B6E39623C71821007C8CC0 /* ChooseMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMemberTableViewCell.swift; sourceTree = "<group>"; };
@@ -198,10 +200,9 @@
 				880FA5E92373F3FF0086F172 /* Main.storyboard */,
 				880FA5EC2373F3FF0086F172 /* Assets.xcassets */,
 				880FA5EE2373F3FF0086F172 /* LaunchScreen.storyboard */,
-				88491E19238E6EFD00DB2056 /* FireStoreManager.swift */,
 				88CE819023C59D9600E783EA /* Info.plist */,
-				88B6E39123C710A0007C8CC0 /* CreateGroupViewController.swift */,
 				88A0A5AE23C7A065007E7DB5 /* ProfileViewController.swift */,
+				88B6E39123C710A0007C8CC0 /* CreateGroupViewController.swift */,
 				88B6E39323C713D9007C8CC0 /* ChooseMembersViewController.swift */,
 				88B6E39623C71821007C8CC0 /* ChooseMemberTableViewCell.swift */,
 				88B6E39723C71821007C8CC0 /* ChooseMemberTableViewCell.xib */,
@@ -231,6 +232,7 @@
 		880FA6172374164D0086F172 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8833FF0423CF061900F59487 /* GoogleService-Info.plist */,
 				887287E723A1F95200CAF463 /* GroupTableViewCell.xib */,
 				887287E523A1F94200CAF463 /* GroupTableViewCell.swift */,
 				880FA621237417D70086F172 /* Global.swift */,
@@ -238,6 +240,7 @@
 				88682F8E23978C0A00EBDFEF /* Person.swift */,
 				88CE818E23C58E6E00E783EA /* RoomRepository.swift */,
 				889E334823C5E53E007058A3 /* GroupViewController.swift */,
+				88B5174123F3AEE200995E57 /* MessageRepository.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				889B2BC423C7E3EB00E31F9B /* SendImageTableViewCell.xib in Resources */,
 				889B2BCA23C7E43800E31F9B /* ReceiveImageTableViewCell.xib in Resources */,
 				887287EC23A1F95300CAF463 /* GroupTableViewCell.xib in Resources */,
+				8833FF0523CF061900F59487 /* GoogleService-Info.plist in Resources */,
 				880FA5ED2373F3FF0086F172 /* Assets.xcassets in Resources */,
 				880FA5EB2373F3FF0086F172 /* Main.storyboard in Resources */,
 			);
@@ -573,7 +577,7 @@
 				880FA61E237417420086F172 /* UITableViewExtensions.swift in Sources */,
 				880FA5E82373F3FF0086F172 /* LoginViewController.swift in Sources */,
 				88C4CE622386364C00754C9D /* Room.swift in Sources */,
-				88491E1A238E6EFD00DB2056 /* FireStoreManager.swift in Sources */,
+				88B5174223F3AEE200995E57 /* MessageRepository.swift in Sources */,
 				880FA5E42373F3FF0086F172 /* AppDelegate.swift in Sources */,
 				889B2BC323C7E3EB00E31F9B /* SendImageTableViewCell.swift in Sources */,
 				889B2BBD23C7E35900E31F9B /* ReceiveTextTableViewCell.swift in Sources */,
@@ -705,6 +709,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -758,6 +763,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

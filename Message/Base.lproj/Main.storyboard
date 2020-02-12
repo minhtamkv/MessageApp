@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,7 +100,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="handleLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EbB-YW-dhd"/>
-                                            <segue destination="4QH-1v-LFo" kind="presentation" id="K6h-m7-iyr"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hiển thị mật khẩu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtp-fe-UCP">
@@ -144,15 +143,11 @@
                                             <segue destination="dgK-xb-W5u" kind="presentation" id="QUP-RA-att"/>
                                         </connections>
                                     </button>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="J3h-gE-5Mc">
-                                        <rect key="frame" x="226" y="168" width="20" height="20"/>
-                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="pJE-XJ-hRN" secondAttribute="trailing" constant="40" id="4Eg-fr-6WX"/>
                                     <constraint firstItem="CAq-7h-Jjv" firstAttribute="top" secondItem="Mtp-fe-UCP" secondAttribute="bottom" constant="42" id="4N7-oR-COi"/>
                                     <constraint firstItem="Ux5-3y-IEr" firstAttribute="leading" secondItem="pJE-XJ-hRN" secondAttribute="leading" id="4nD-yk-MaK"/>
-                                    <constraint firstItem="J3h-gE-5Mc" firstAttribute="centerY" secondItem="F9J-ZT-6hh" secondAttribute="centerY" id="A0j-Nw-lKs"/>
                                     <constraint firstItem="Mtp-fe-UCP" firstAttribute="leading" secondItem="DQB-qV-tmR" secondAttribute="trailing" constant="5" id="A3W-YQ-woA"/>
                                     <constraint firstItem="dYV-Qq-P3S" firstAttribute="top" secondItem="9qR-w6-zra" secondAttribute="bottom" constant="10" id="ArP-C2-Epd"/>
                                     <constraint firstAttribute="height" constant="295" id="BaR-SW-2Nv"/>
@@ -163,7 +158,6 @@
                                     <constraint firstItem="9qR-w6-zra" firstAttribute="top" secondItem="Ux5-3y-IEr" secondAttribute="bottom" constant="26" id="HFb-G9-mmJ"/>
                                     <constraint firstItem="Ux5-3y-IEr" firstAttribute="trailing" secondItem="pJE-XJ-hRN" secondAttribute="trailing" id="KBb-eg-SSv"/>
                                     <constraint firstItem="9qR-w6-zra" firstAttribute="leading" secondItem="pJE-XJ-hRN" secondAttribute="leading" id="Luk-TZ-ato"/>
-                                    <constraint firstItem="F9J-ZT-6hh" firstAttribute="leading" secondItem="J3h-gE-5Mc" secondAttribute="trailing" constant="8" id="Soj-01-0Hl"/>
                                     <constraint firstItem="dYV-Qq-P3S" firstAttribute="leading" secondItem="9qR-w6-zra" secondAttribute="leading" id="ZI1-cb-I9R"/>
                                     <constraint firstItem="DQB-qV-tmR" firstAttribute="leading" secondItem="dYV-Qq-P3S" secondAttribute="leading" id="aZy-Rp-9P8"/>
                                     <constraint firstItem="Ux5-3y-IEr" firstAttribute="top" secondItem="pJE-XJ-hRN" secondAttribute="bottom" constant="10" id="dfa-dt-0vl"/>
@@ -190,7 +184,6 @@
                     <connections>
                         <outlet property="checkLoginButton" destination="F9J-ZT-6hh" id="my8-Xp-O2T"/>
                         <outlet property="emailTextField" destination="cHj-Jy-XC6" id="kf1-WR-glF"/>
-                        <outlet property="indicator" destination="J3h-gE-5Mc" id="SKQ-4U-9r7"/>
                         <outlet property="passwordTextField" destination="Usk-8K-t4r" id="ptB-uw-qoi"/>
                     </connections>
                 </viewController>
@@ -201,7 +194,7 @@
         <!--Group View Controller-->
         <scene sceneID="MbY-Mc-lrA">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="4QH-1v-LFo" customClass="GroupViewController" customModule="Message" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4QH-1v-LFo" customClass="GroupViewController" customModule="Message" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="T95-45-A1s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -236,7 +229,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button" image="Person"/>
                                                 <connections>
-                                                    <segue destination="Val-wT-Rej" kind="presentation" id="Ngt-Nr-Vgv"/>
+                                                    <segue destination="Val-wT-Rej" kind="presentation" id="qwP-dc-xy2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Aj-fD-vzO">
@@ -381,6 +374,7 @@
                                         </state>
                                         <connections>
                                             <action selector="handleDone:" destination="O2a-no-igv" eventType="touchUpInside" id="vSO-e1-YIa"/>
+                                            <segue destination="4QH-1v-LFo" kind="presentation" id="YbT-YT-VYU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -441,6 +435,7 @@
                     </view>
                     <connections>
                         <outlet property="listContacts" destination="K6O-vu-bAZ" id="Zqo-22-iHo"/>
+                        <outlet property="searchBar" destination="Cet-d6-a6v" id="cwb-hA-u37"/>
                         <outlet property="searchMembers" destination="Cet-d6-a6v" id="O1E-ef-Zxk"/>
                     </connections>
                 </viewController>
@@ -473,7 +468,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="handleCreateGroup:" destination="ODk-XP-nyr" eventType="touchUpInside" id="JLm-Nm-9vz"/>
-                                    <segue destination="O2a-no-igv" kind="presentation" id="jP4-7s-j2l"/>
+                                    <segue destination="O2a-no-igv" kind="presentation" identifier="ChooseMembersViewController" id="moG-cu-6Up"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập tên group" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ao-ss-XbY">
@@ -718,9 +713,6 @@
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="maleTapped:" destination="Val-wT-Rej" eventType="touchUpInside" id="i3J-mG-ojj"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEF-tZ-Bgf">
                                                 <rect key="frame" x="147" y="304.5" width="120" height="34"/>
@@ -839,6 +831,9 @@
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button" image="HomeBtn"/>
+                                                <connections>
+                                                    <segue destination="4QH-1v-LFo" kind="presentation" id="ITg-Dl-mKF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yyn-aI-lEH">
                                                 <rect key="frame" x="250" y="0.0" width="28" height="30"/>
@@ -888,7 +883,7 @@
                         <viewLayoutGuide key="safeArea" id="tbD-0S-0l0"/>
                     </view>
                     <connections>
-                        <outlet property="avartaImageView" destination="5NG-f8-gUD" id="sk5-qy-XMh"/>
+                        <outlet property="avatarImageView" destination="5NG-f8-gUD" id="2Jh-LY-ZRe"/>
                         <outlet property="dateOfBirthTextField" destination="exf-jN-wcg" id="aAK-fI-PBW"/>
                         <outlet property="editButton" destination="N4z-V6-f5o" id="xAW-bc-D5O"/>
                         <outlet property="emailLabel" destination="afN-Vk-7j1" id="kbA-LN-Wgv"/>
@@ -911,7 +906,7 @@
         <!--Message View Controller-->
         <scene sceneID="4hE-1f-D0F">
             <objects>
-                <viewController id="8g6-aU-gmz" customClass="MessageViewController" customModule="Message" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8g6-aU-gmz" customClass="MessageViewController" customModule="Message" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="vnN-ce-D24">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -928,7 +923,7 @@
                                         <color key="tintColor" red="0.80000000000000004" green="0.28235294119999998" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button" image="AttachBtn"/>
                                         <connections>
-                                            <action selector="handleAttackButton:" destination="8g6-aU-gmz" eventType="touchUpInside" id="HvD-4b-IXP"/>
+                                            <action selector="attackButton:" destination="8g6-aU-gmz" eventType="touchUpInside" id="h1c-Ta-mRS"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVK-tf-h5M" userLabel="sendBtn">
@@ -940,7 +935,7 @@
                                         <color key="tintColor" red="0.80000000000000004" green="0.28235294119999998" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button" image="SendBtn"/>
                                         <connections>
-                                            <action selector="handleSendButton:" destination="8g6-aU-gmz" eventType="touchUpInside" id="lmy-fp-ctJ"/>
+                                            <action selector="sendButton:" destination="8g6-aU-gmz" eventType="touchUpInside" id="NjJ-Os-0u0"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTo-GT-6b5">
@@ -979,7 +974,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Quay lại"/>
                                         <connections>
-                                            <action selector="handleBackButton:" destination="8g6-aU-gmz" eventType="touchUpInside" id="2Zb-Zh-go3"/>
+                                            <action selector="backButton:" destination="8g6-aU-gmz" eventType="touchUpInside" id="pbJ-NG-pW8"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1177,9 +1172,6 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="zoB-TD-1TW"/>
                                         </constraints>
                                     </imageView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Ptf-tb-qJw">
-                                        <rect key="frame" x="233" y="333.5" width="20" height="20"/>
-                                    </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBL-0d-vrj" userLabel="backBtn">
                                         <rect key="frame" x="40" y="328.5" width="110" height="30"/>
                                         <constraints>
@@ -1214,7 +1206,6 @@
                                     <constraint firstItem="a1p-8v-KJW" firstAttribute="trailing" secondItem="CbK-93-Pqw" secondAttribute="trailing" id="Hmc-CE-sJx"/>
                                     <constraint firstItem="CbK-93-Pqw" firstAttribute="top" secondItem="fMv-t3-N5J" secondAttribute="bottom" constant="38" id="K8A-gI-u2X"/>
                                     <constraint firstItem="r3N-cQ-kTo" firstAttribute="top" secondItem="CB5-h4-k3V" secondAttribute="bottom" constant="38" id="Kw7-Xc-4Y5"/>
-                                    <constraint firstItem="sE4-cW-d9Z" firstAttribute="leading" secondItem="Ptf-tb-qJw" secondAttribute="trailing" constant="10" id="LHo-pc-4aG"/>
                                     <constraint firstItem="SqQ-6G-0fh" firstAttribute="top" secondItem="CB5-h4-k3V" secondAttribute="bottom" constant="10" id="M6A-lB-zJq"/>
                                     <constraint firstItem="sE4-cW-d9Z" firstAttribute="trailing" secondItem="CB5-h4-k3V" secondAttribute="trailing" id="ONc-RZ-dMu"/>
                                     <constraint firstItem="a1p-8v-KJW" firstAttribute="leading" secondItem="CbK-93-Pqw" secondAttribute="leading" id="Obr-so-eEd"/>
@@ -1229,7 +1220,6 @@
                                     <constraint firstItem="XLr-Me-BTL" firstAttribute="leading" secondItem="fMv-t3-N5J" secondAttribute="leading" id="bpd-Nn-LRU"/>
                                     <constraint firstItem="SqQ-6G-0fh" firstAttribute="trailing" secondItem="CB5-h4-k3V" secondAttribute="trailing" id="e9x-h4-vQt"/>
                                     <constraint firstItem="fMv-t3-N5J" firstAttribute="leading" secondItem="CB5-h4-k3V" secondAttribute="leading" id="eLe-c1-oU5"/>
-                                    <constraint firstItem="Ptf-tb-qJw" firstAttribute="centerY" secondItem="sE4-cW-d9Z" secondAttribute="centerY" id="gDU-bg-zib"/>
                                     <constraint firstItem="XBL-0d-vrj" firstAttribute="centerY" secondItem="sE4-cW-d9Z" secondAttribute="centerY" id="hW3-Kd-eZm"/>
                                     <constraint firstItem="CB5-h4-k3V" firstAttribute="top" secondItem="Bwb-Jv-msM" secondAttribute="top" constant="45" id="it8-fm-uwC"/>
                                     <constraint firstItem="ht1-YX-QIC" firstAttribute="centerY" secondItem="sE4-cW-d9Z" secondAttribute="centerY" id="kqN-wx-zoF"/>
@@ -1282,4 +1272,7 @@
         <image name="backBtn" width="128" height="128"/>
         <image name="graybar" width="16" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YbT-YT-VYU"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -17,15 +17,19 @@ private enum Constants {
     static let heightForRow: CGFloat = 80
 }
 
-class GroupViewController: UIViewController, StoryboardBased {
+class GroupViewController: UIViewController {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var groupTableView: UITableView!
     private var currentTime: NSNumber?
-    private var searchRooms = [Room]()
+    var searchRooms: [Room] = [] {
+        didSet {
+            groupTableView.reloadData()
+        }
+    }
     private let currentUser = Auth.auth().currentUser
     private let database = Firestore.firestore()
-    private var rooms = [Room]()
+    var rooms = [Room]()
     private var messages = [Message]()
     
     private let roomRepository = RoomRepository()
@@ -33,11 +37,12 @@ class GroupViewController: UIViewController, StoryboardBased {
     override func viewDidLoad() {
         super.viewDidLoad()
         configListTableView()
+        getRoom()
+        searchRooms = self.rooms
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getRoom()
         groupTableView.reloadData()
     }
     
@@ -49,12 +54,15 @@ class GroupViewController: UIViewController, StoryboardBased {
         }
     }
     
+    func setDataForArray(data: [Room]) {
+        searchRooms = data
+    }
+    
     func getRoom() {
-        rooms = [Room]()
         roomRepository.getRooms() { [weak self] result, error in
-            self?.rooms.append(result ?? Room(nameGroup: "", idRoom: "", image: "", time: 0, uidMember: [""], admins: [""]))
+            self?.searchRooms = result ?? []
         }
-        searchRooms = rooms
+        self.rooms = searchRooms
     }
     
     @IBAction func contactTapped(_ sender: UIButton) {
@@ -90,7 +98,9 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let room = searchRooms[indexPath.row]
         let idRoom = room.idRoom
-        let messageViewController = MessageViewController(nibName: "MessageViewController", bundle: nil)
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let messageViewController = storyboard.instantiateViewController(withIdentifier: "MessageViewController") as! MessageViewController
+//        self.present(vc, animated: true, completion: nil)
         messageViewController.groupName = room.nameGroup
         messageViewController.idRoom = idRoom
         self.present(messageViewController, animated: false, completion: nil)

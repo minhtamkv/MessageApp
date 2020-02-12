@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,12 +68,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="groupImageView" destination="tpL-fo-iYa" id="nvD-qd-9Bt"/>
-                <outlet property="groupName" destination="8pp-AT-hSc" id="QVT-pk-M6u"/>
-                <outlet property="imgCell" destination="tpL-fo-iYa" id="Mir-eO-ALa"/>
-                <outlet property="lastMessage" destination="lGF-Xv-nU8" id="O7C-pu-XIm"/>
-                <outlet property="nameGroupCell" destination="8pp-AT-hSc" id="Ba6-Dr-VIi"/>
-                <outlet property="timeLastMessage" destination="qeS-04-PUS" id="ztr-6C-10F"/>
-                <outlet property="titleNameGroup" destination="8pp-AT-hSc" id="EAU-Nd-7SV"/>
+                <outlet property="groupNameLabel" destination="8pp-AT-hSc" id="Bc5-DN-XUH"/>
             </connections>
             <point key="canvasLocation" x="132.60869565217394" y="172.43303571428569"/>
         </tableViewCell>

@@ -11,11 +11,11 @@ import Firebase
 import Reusable
 import SDWebImage
 
-final class GroupTableViewCell: UITableViewCell, Reusable {
+final class GroupTableViewCell: UITableViewCell, NibReusable {
 
     @IBOutlet private weak var groupImageView: UIImageView!
-    @IBOutlet private weak var groupNameLabel: UILabel!
     
+    @IBOutlet weak var groupNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ivc-5J-qKC" customClass="UserTableViewCell" customModule="Message" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ivc-5J-qKC" customClass="ChooseMemberTableViewCell" customModule="Message">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ivc-5J-qKC" id="aO9-ft-EsL">
@@ -28,10 +28,10 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqQ-9e-8mO" userLabel="TitleLabel">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqQ-9e-8mO" userLabel="TitleLabel">
                         <rect key="frame" x="55" y="13.5" width="215" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD8-AJ-zee">
@@ -43,7 +43,7 @@
                         <state key="normal" title="Button" image="tick1"/>
                         <state key="selected" image="tick2"/>
                         <connections>
-                            <action selector="clickCheck:" destination="ivc-5J-qKC" eventType="touchUpInside" id="4Qn-oD-rLW"/>
+                            <action selector="selectButton:" destination="ivc-5J-qKC" eventType="touchUpInside" id="Ca3-kQ-9fn"/>
                         </connections>
                     </button>
                 </subviews>
@@ -59,19 +59,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="LKJ-Zj-nBg"/>
             <connections>
-                <outlet property="btnCheck" destination="dD8-AJ-zee" id="AaA-8Z-DnP"/>
-                <outlet property="chooseButton" destination="dD8-AJ-zee" id="Ctv-ek-6pD"/>
-                <outlet property="imageViewUser" destination="qSf-OQ-Qn5" id="lPu-25-V4w"/>
-                <outlet property="titleLabel" destination="aqQ-9e-8mO" id="ggw-46-vRS"/>
+                <outlet property="selectUserButton" destination="dD8-AJ-zee" id="wXP-SH-sfG"/>
                 <outlet property="userImageView" destination="qSf-OQ-Qn5" id="KQu-6x-v6Q"/>
-                <outlet property="userName" destination="aqQ-9e-8mO" id="33V-T9-Dms"/>
+                <outlet property="userNameLabel" destination="aqQ-9e-8mO" id="6hj-hk-yCh"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="34.821428571428569"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Person" width="282" height="322"/>
-        <image name="tick1" width="16" height="16"/>
-        <image name="tick2" width="16" height="16"/>
+        <image name="tick1" width="100" height="100"/>
+        <image name="tick2" width="100" height="100"/>
     </resources>
 </document>

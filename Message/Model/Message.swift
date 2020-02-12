@@ -14,7 +14,7 @@ struct Message {
     var content: String = ""
     var uidRoom: String = ""
     var image: String = ""
-    var timeSend: Double = 0.0
+    var timeSend: NSNumber = 0.0
     var uidUser: String = ""
     var height: CGFloat = 0.0
     var width: CGFloat = 0.0
@@ -24,7 +24,7 @@ struct Message {
         let uidRoom = dictionary["toRoom"] as? String ?? ""
         let image = dictionary["image"] as? String ?? ""
         let idUser = dictionary["fromUser"] as? String ?? ""
-        let time = dictionary["time"] as? Double ?? 0
+        let time = dictionary["time"] as? NSNumber ?? 0
         let height = dictionary["height"] as? CGFloat ?? 0
         let width = dictionary["width"] as? CGFloat ?? 0
         
