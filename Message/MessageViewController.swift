@@ -26,7 +26,7 @@ private enum FirebaseConstant {
 }
 
 
-final class MessageViewController: UIViewController {
+final class MessageViewController: UIViewController, StoryboardSceneBased {
         
     @IBOutlet private weak var nameGroupLabel: UILabel!
     @IBOutlet private weak var mesasgeTableView: UITableView!
@@ -49,6 +49,7 @@ final class MessageViewController: UIViewController {
     var titleGroup: String = ""
     private let database = Firestore.firestore()
     private let messageRepository = MessageRepository()
+    static let sceneStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()

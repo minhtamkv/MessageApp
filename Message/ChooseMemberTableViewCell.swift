@@ -11,43 +11,33 @@ import Reusable
 import SDWebImage
 
 protocol ChooseMemberTableViewCellDelegate: AnyObject {
-    func addUserToGroup(forUser user: User)
-    func removeUserToGroup(forUser user: User)
+    func addUserToGroup(forUser userUid: String)
+    func removeUserToGroup(forUser userUid: String)
+    func didTapButtonInCell(_ cell: ChooseMemberTableViewCell)
 }
 
 class ChooseMemberTableViewCell: UITableViewCell, NibReusable {
 
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var userNameLabel: UILabel!
-    @IBOutlet private weak var selectUserButton: UIButton!
+    @IBOutlet weak var selectUserButton: UIButton!
     
     weak var delegate: ChooseMemberTableViewCellDelegate?
-    var indexPath: IndexPath?
-    var user: User?
+    var isChoosen: Bool = false
+    var userUid: String?
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        guard let user = user else { return }
-        selectUserButton.isSelected = user.isSelected
     }
         
     override func awakeFromNib() {
         super.awakeFromNib()
         self.userImageView.image = UIImage(named: "Person")
-        guard let user = user else { return }
-        selectUserButton.isSelected = user.isSelected
-
-//        configCell()
+        selectUserButton.isSelected = isChoosen
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    }
-    
-    func configCell() {
-        self.userImageView.image = UIImage(named: "Person")
-        guard let user = user else { return }
-        selectUserButton.isSelected = user.isSelected
     }
     
     func setupCell(data: User) {
@@ -57,13 +47,6 @@ class ChooseMemberTableViewCell: UITableViewCell, NibReusable {
     }
     
     @IBAction func selectButton(_ sender: UIButton) {
-        guard var user = user else { return }
-        sender.isSelected = !sender.isSelected
-        user.isSelected = sender.isSelected
-        if user.isSelected {
-            delegate?.addUserToGroup(forUser: user)
-        } else {
-            delegate?.removeUserToGroup(forUser: user)
-        }
+        delegate?.didTapButtonInCell(self)
     }
 }

@@ -60,7 +60,6 @@ final class LoginViewController: UIViewController {
         if validateSuccessPassword == true && vatidateSuccessEmail == true {
             userRepository.login(user: username, password: password) { [weak self] _, error in
                 if error != nil {
-                    self?.stopIndicator()
                     self?.showAlert(message: "Đã có lỗi xảy ra", title: "Thử lại")
                 } else {
                     self?.loginAccess()
@@ -84,16 +83,6 @@ final class LoginViewController: UIViewController {
             $0.subtype = CATransitionSubtype.fromRight
             $0.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         }
-    }
-    
-    func startIndicator() {
-        indicator.isHidden = false
-        indicator.startAnimating()
-    }
-    
-    func stopIndicator() {
-        indicator.isHidden = true
-        indicator.stopAnimating()
     }
 }
 

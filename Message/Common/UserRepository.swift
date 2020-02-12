@@ -35,7 +35,6 @@ class UserRepository {
                 self?.registData(user: user, password: password, uid: result?.user.uid ?? "", fullname: "")
             } else {
                 completion(nil, error)
-                print("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
             }
         }
     }
@@ -115,23 +114,25 @@ class UserRepository {
         }
     }
     
-    public func fetchUser() {
-        database.collection(FirebaseConstants.users).getDocuments(){ [weak self] querySnapshot, err in
+    public func fetchUser(completion: @escaping (([User]?, Error?) -> Void)) {
+        database
+            .collection(FirebaseConstants.users)
+            .getDocuments(){ [weak self] (querySnapshot, err) in
                if let err = err {
                    print("Error getting documents: \(err)")
                } else {
                    if let snapshot = querySnapshot {
+                    var users = [User]()
                        for document in snapshot.documents {
                            let data = document.data()
                            let uid = data["uid"] as? String ?? ""
-                        if uid != self?.currentUser?.uid {
-                               let newUser = User.map(uid: uid, dictionary: data)
-                            ChooseMembersViewController().users.append(newUser)
+                            if uid != self?.currentUser?.uid {
+                                let newUser = User.map(uid: uid, dictionary: data)
+                                users.append(newUser)
                            }
-                       }
+                        }
+                        completion(users, err)
                    }
-                ChooseMembersViewController().searchUser = ChooseMembersViewController().users
-//                   self.tableView.reloadData()
                }
            }
        }

@@ -18,15 +18,16 @@ private enum FirebaseConstant {
     static let time = "time"
 }
 
-
 class MessageRepository {
     private let database = Firestore.firestore()
     private let currentUser = Auth.auth().currentUser
     
     func getMessage(idRoom: String, completion: @escaping (([Message]?, Error?) -> Void)) {
             let getMessage = self.database.collection(FirebaseConstant.message)
-            getMessage.document(idRoom).collection(FirebaseConstant.msg).order(by: FirebaseConstant.time, descending: false)
-            getMessage.document(idRoom).collection(FirebaseConstant.msg).addSnapshotListener{ [weak self] querySnapshot, err in
+            getMessage
+                .document(idRoom)
+                .collection(FirebaseConstant.msg)
+                .addSnapshotListener{ [weak self] querySnapshot, err in
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
@@ -51,5 +52,4 @@ class MessageRepository {
                 }
             }
     }
-
 }

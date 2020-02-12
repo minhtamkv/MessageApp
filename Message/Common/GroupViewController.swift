@@ -17,7 +17,7 @@ private enum Constants {
     static let heightForRow: CGFloat = 80
 }
 
-class GroupViewController: UIViewController {
+class GroupViewController: UIViewController, StoryboardBased {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var groupTableView: UITableView!
@@ -31,7 +31,6 @@ class GroupViewController: UIViewController {
     private let database = Firestore.firestore()
     var rooms = [Room]()
     private var messages = [Message]()
-    
     private let roomRepository = RoomRepository()
     
     override func viewDidLoad() {
@@ -98,9 +97,7 @@ extension GroupViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let room = searchRooms[indexPath.row]
         let idRoom = room.idRoom
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let messageViewController = storyboard.instantiateViewController(withIdentifier: "MessageViewController") as! MessageViewController
-//        self.present(vc, animated: true, completion: nil)
+        let messageViewController = MessageViewController.instantiate()
         messageViewController.groupName = room.nameGroup
         messageViewController.idRoom = idRoom
         self.present(messageViewController, animated: false, completion: nil)

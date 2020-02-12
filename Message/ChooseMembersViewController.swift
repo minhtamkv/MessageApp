@@ -22,7 +22,11 @@ final class ChooseMembersViewController: UIViewController {
     @IBOutlet private weak var listContacts: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
     
-    var searchUser = [User]()
+    private var searchUser = [User]() {
+        didSet {
+            listContacts.reloadData()
+        }
+    }
     private let database = Firestore.firestore()
     var users = [User]()
     private var currentUser = Auth.auth().currentUser
@@ -52,25 +56,9 @@ final class ChooseMembersViewController: UIViewController {
         searchBar.delegate = self
     }
     
-    public func fetchUser() {
-        database.collection("users").getDocuments(){ (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                if let snapshot = querySnapshot {
-                    for document in snapshot.documents {
-                        let data = document.data()
-                        let uid = data["uid"] as? String ?? ""
-                        if uid != self.currentUser?.uid {
-                            let newUser = User.map(uid: uid, dictionary: data)
-                            self.users.append(newUser)
-                        }
-                    }
-                }
-                self.searchUser = self.users
-
-                self.listContacts.reloadData()
-            }
+    func fetchUser() {
+        userRepository.fetchUser() { [weak self] result, error in
+            self?.searchUser = result ?? []
         }
     }
         
@@ -113,8 +101,8 @@ extension ChooseMembersViewController: UITableViewDelegate, UITableViewDataSourc
             let user = searchUser[indexPath.row]
             $0.setupCell(data: user)
             $0.delegate = self
-            $0.indexPath = indexPath
-            $0.user = user
+            $0.userUid = user.uid
+            
         }
         return cell
     }
@@ -125,14 +113,24 @@ extension ChooseMembersViewController: UITableViewDelegate, UITableViewDataSourc
 }
 
 extension ChooseMembersViewController: ChooseMemberTableViewCellDelegate {
-    func addUserToGroup(forUser user: User) {
-        let selectedUserUid = user.uid
-        selectUserArray.append(selectedUserUid)
+    func addUserToGroup(forUser userUid: String) {
+        selectUserArray.append(userUid)
     }
-    func removeUserToGroup(forUser user: User) {
-        let removeUser = selectUserArray.filter { $0 == user.uid }.first
+    func removeUserToGroup(forUser userUid: String) {
+        let removeUser = selectUserArray.filter { $0 == userUid }.first
         if let removeUserIndex = selectUserArray.firstIndex(where: { $0 == removeUser}) {
             selectUserArray.remove(at: removeUserIndex)
         }
     }
+    func didTapButtonInCell(_ cell: ChooseMemberTableViewCell) {
+        guard let userUid = cell.userUid else { return }
+        cell.selectUserButton.isSelected = !cell.selectUserButton.isSelected
+        cell.isChoosen = cell.selectUserButton.isSelected
+        if cell.isChoosen {
+            addUserToGroup(forUser: userUid)
+        } else {
+            removeUserToGroup(forUser: userUid)
+        }
+    }
+
 }

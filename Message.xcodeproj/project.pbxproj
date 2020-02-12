@@ -23,8 +23,6 @@
 		88682F8F23978C0A00EBDFEF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88682F8E23978C0A00EBDFEF /* Person.swift */; };
 		887287E623A1F94200CAF463 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887287E523A1F94200CAF463 /* GroupTableViewCell.swift */; };
 		887287EC23A1F95300CAF463 /* GroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 887287E723A1F95200CAF463 /* GroupTableViewCell.xib */; };
-		889B2BB523C7E27D00E31F9B /* SendTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B2BB323C7E27C00E31F9B /* SendTextTableViewCell.swift */; };
-		889B2BB623C7E27D00E31F9B /* SendTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889B2BB423C7E27D00E31F9B /* SendTextTableViewCell.xib */; };
 		889B2BBD23C7E35900E31F9B /* ReceiveTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B2BBB23C7E35900E31F9B /* ReceiveTextTableViewCell.swift */; };
 		889B2BBE23C7E35900E31F9B /* ReceiveTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 889B2BBC23C7E35900E31F9B /* ReceiveTextTableViewCell.xib */; };
 		889B2BC323C7E3EB00E31F9B /* SendImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B2BC123C7E3EB00E31F9B /* SendImageTableViewCell.swift */; };
@@ -35,6 +33,9 @@
 		889E334923C5E53E007058A3 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889E334823C5E53E007058A3 /* GroupViewController.swift */; };
 		88A0A5AF23C7A065007E7DB5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A0A5AE23C7A065007E7DB5 /* ProfileViewController.swift */; };
 		88B5174223F3AEE200995E57 /* MessageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B5174123F3AEE200995E57 /* MessageRepository.swift */; };
+		88B6484923F3DD3D00E26B97 /* SendTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6484723F3DD3D00E26B97 /* SendTextTableViewCell.swift */; };
+		88B6484A23F3DD3D00E26B97 /* SendTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B6484823F3DD3D00E26B97 /* SendTextTableViewCell.xib */; };
+		88B6484C23F3E33800E26B97 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88B6484B23F3E33800E26B97 /* GoogleService-Info.plist */; };
 		88B6E39223C710A0007C8CC0 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6E39123C710A0007C8CC0 /* CreateGroupViewController.swift */; };
 		88B6E39423C713D9007C8CC0 /* ChooseMembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6E39323C713D9007C8CC0 /* ChooseMembersViewController.swift */; };
 		88B6E39823C71821007C8CC0 /* ChooseMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6E39623C71821007C8CC0 /* ChooseMemberTableViewCell.swift */; };
@@ -94,8 +95,6 @@
 		88682F8E23978C0A00EBDFEF /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		887287E523A1F94200CAF463 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		887287E723A1F95200CAF463 /* GroupTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupTableViewCell.xib; sourceTree = "<group>"; };
-		889B2BB323C7E27C00E31F9B /* SendTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTextTableViewCell.swift; sourceTree = "<group>"; };
-		889B2BB423C7E27D00E31F9B /* SendTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendTextTableViewCell.xib; sourceTree = "<group>"; };
 		889B2BBB23C7E35900E31F9B /* ReceiveTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveTextTableViewCell.swift; sourceTree = "<group>"; };
 		889B2BBC23C7E35900E31F9B /* ReceiveTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveTextTableViewCell.xib; sourceTree = "<group>"; };
 		889B2BC123C7E3EB00E31F9B /* SendImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +105,9 @@
 		889E334823C5E53E007058A3 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		88A0A5AE23C7A065007E7DB5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		88B5174123F3AEE200995E57 /* MessageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepository.swift; sourceTree = "<group>"; };
+		88B6484723F3DD3D00E26B97 /* SendTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendTextTableViewCell.swift; sourceTree = "<group>"; };
+		88B6484823F3DD3D00E26B97 /* SendTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendTextTableViewCell.xib; sourceTree = "<group>"; };
+		88B6484B23F3E33800E26B97 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		88B6E39123C710A0007C8CC0 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		88B6E39323C713D9007C8CC0 /* ChooseMembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMembersViewController.swift; sourceTree = "<group>"; };
 		88B6E39623C71821007C8CC0 /* ChooseMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMemberTableViewCell.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		880FA6172374164D0086F172 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				88B6484B23F3E33800E26B97 /* GoogleService-Info.plist */,
 				887287E723A1F95200CAF463 /* GroupTableViewCell.xib */,
 				887287E523A1F94200CAF463 /* GroupTableViewCell.swift */,
 				880FA621237417D70086F172 /* Global.swift */,
@@ -254,8 +257,8 @@
 		889B2BB223C7E22400E31F9B /* MessageCell */ = {
 			isa = PBXGroup;
 			children = (
-				889B2BB323C7E27C00E31F9B /* SendTextTableViewCell.swift */,
-				889B2BB423C7E27D00E31F9B /* SendTextTableViewCell.xib */,
+				88B6484723F3DD3D00E26B97 /* SendTextTableViewCell.swift */,
+				88B6484823F3DD3D00E26B97 /* SendTextTableViewCell.xib */,
 				889B2BBB23C7E35900E31F9B /* ReceiveTextTableViewCell.swift */,
 				889B2BBC23C7E35900E31F9B /* ReceiveTextTableViewCell.xib */,
 				889B2BC123C7E3EB00E31F9B /* SendImageTableViewCell.swift */,
@@ -399,12 +402,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				889B2BBE23C7E35900E31F9B /* ReceiveTextTableViewCell.xib in Resources */,
-				889B2BB623C7E27D00E31F9B /* SendTextTableViewCell.xib in Resources */,
 				88B6E39923C71821007C8CC0 /* ChooseMemberTableViewCell.xib in Resources */,
+				88B6484A23F3DD3D00E26B97 /* SendTextTableViewCell.xib in Resources */,
 				880FA5F02373F3FF0086F172 /* LaunchScreen.storyboard in Resources */,
 				889B2BC423C7E3EB00E31F9B /* SendImageTableViewCell.xib in Resources */,
 				889B2BCA23C7E43800E31F9B /* ReceiveImageTableViewCell.xib in Resources */,
 				887287EC23A1F95300CAF463 /* GroupTableViewCell.xib in Resources */,
+				88B6484C23F3E33800E26B97 /* GoogleService-Info.plist in Resources */,
 				880FA5ED2373F3FF0086F172 /* Assets.xcassets in Resources */,
 				880FA5EB2373F3FF0086F172 /* Main.storyboard in Resources */,
 			);
@@ -584,7 +588,6 @@
 				887287E623A1F94200CAF463 /* GroupTableViewCell.swift in Sources */,
 				889B2BCC23C7E57800E31F9B /* MessageViewController.swift in Sources */,
 				889B2BC923C7E43800E31F9B /* ReceiveImageTableViewCell.swift in Sources */,
-				889B2BB523C7E27D00E31F9B /* SendTextTableViewCell.swift in Sources */,
 				88CE818F23C58E6E00E783EA /* RoomRepository.swift in Sources */,
 				880FA622237417D70086F172 /* Global.swift in Sources */,
 				88491E1C238E776400DB2056 /* UIViewController+.swift in Sources */,
@@ -593,6 +596,7 @@
 				882C06052398B05A00ED3B3E /* CustomValidationError.swift in Sources */,
 				88A0A5AF23C7A065007E7DB5 /* ProfileViewController.swift in Sources */,
 				889E334923C5E53E007058A3 /* GroupViewController.swift in Sources */,
+				88B6484923F3DD3D00E26B97 /* SendTextTableViewCell.swift in Sources */,
 				88C4CE64238636A100754C9D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
