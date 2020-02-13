@@ -141,12 +141,12 @@ final class MessageViewController: UIViewController, StoryboardSceneBased {
             .document(idRoom)
             .setData(["time" : time], merge: true)
         
-        let refer = self.database
+        let reference = self.database
             .collection(FirebaseConstant.message)
             .document(idRoom)
             .collection(FirebaseConstant.msg)
             .addDocument(data: dataMessage)
-        let idImageMessenger = refer.documentID
+        let idImageMessenger = reference.documentID
         var dataImage = Data()
         if let data = newImage?.pngData(){
             dataImage = data
@@ -159,14 +159,14 @@ final class MessageViewController: UIViewController, StoryboardSceneBased {
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
         
-        let storageRef = Storage.storage().reference()
-        let ref = storageRef.child("\(filePath)/\(idImageMessenger).jpeg")
-        ref.putData(dataImage, metadata: metaData) { (metaData, error) in
+        let storageReference = Storage.storage().reference()
+        let refer = storageReference.child("\(filePath)/\(idImageMessenger).jpeg")
+        refer.putData(dataImage, metadata: metaData) { (metaData, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
             } else {
-                ref.downloadURL(completion: { (url, error) in
+                refer.downloadURL(completion: { (url, error) in
                     if let error = error {
                         print(error.localizedDescription)
                         return

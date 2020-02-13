@@ -14,8 +14,8 @@ import SDWebImage
 final class GroupTableViewCell: UITableViewCell, NibReusable {
 
     @IBOutlet private weak var groupImageView: UIImageView!
-    
     @IBOutlet weak var groupNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
